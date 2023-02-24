@@ -4,6 +4,9 @@ import React from "react"
 import { withBlitz } from "src/blitz-client"
 import "src/styles/globals.css"
 
+import { ChakraBaseProvider } from '@chakra-ui/react'
+import chakraTheme from '../components/chakra-theme'
+
 function RootErrorFallback({ error }: ErrorFallbackProps) {
   if (error instanceof AuthenticationError) {
     return <div>Error: You are not authenticated</div>
@@ -27,9 +30,11 @@ function RootErrorFallback({ error }: ErrorFallbackProps) {
 function MyApp({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
   return (
-    <ErrorBoundary FallbackComponent={RootErrorFallback}>
-      {getLayout(<Component {...pageProps} />)}
-    </ErrorBoundary>
+    <ChakraBaseProvider theme={chakraTheme}>
+      <ErrorBoundary FallbackComponent={RootErrorFallback}>
+        {getLayout(<Component {...pageProps} />)}
+      </ErrorBoundary>
+    </ChakraBaseProvider>
   )
 }
 
