@@ -6,6 +6,7 @@ import logout from "src/auth/mutations/logout"
 import { useMutation } from "@blitzjs/rpc"
 import { Routes, BlitzPage } from "@blitzjs/next"
 import styles from "src/styles/Home.module.css"
+import { Button } from "@chakra-ui/react"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
@@ -70,7 +71,7 @@ const Home: BlitzPage = () => {
                   <path d="M42.4727 33.2822H31.7398C27.6555 33.2822 23.8086 31.3626 21.3528 28.0991L10.7656 14.0297C10.5656 13.7638 10.5354 13.4068 10.688 13.1111L16.7908 1.28696C17.0836 0.719654 17.8684 0.652924 18.2528 1.16266L42.4727 33.2822Z"></path>
                 </svg>
               </div>
-
+              <Button colorScheme='teal' variant='outline'>Chakura Button</Button>
               <h1>Your database & authentication is ready. Try it by signing up.</h1>
 
               {/* Auth */}
