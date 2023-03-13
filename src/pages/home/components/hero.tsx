@@ -34,7 +34,7 @@ const HeroBtn = ({ icon, text }) => {
 
 const Hero = () => {
   return (
-    <VStack align="flex-start" flex="1" maxW="50%" spacing="8">
+    <VStack align="flex-start" flex="1" spacing="8">
       <Text fontSize="5xl" className={heptaSlab.className}>
         More ways to grow your money
       </Text>
