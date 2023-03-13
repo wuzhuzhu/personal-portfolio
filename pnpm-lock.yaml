@@ -4,6 +4,7 @@ specifiers:
   '@blitzjs/auth': 2.0.0-beta.23
   '@blitzjs/next': 2.0.0-beta.23
   '@blitzjs/rpc': 2.0.0-beta.23
+  '@chakra-ui/icons': 2.0.17
   '@chakra-ui/react': 2.5.1
   '@emotion/react': 11.10.6
   '@emotion/styled': 11.10.6
@@ -27,7 +28,6 @@ specifiers:
   jsdom: 20.0.3
   lint-staged: 13.0.3
   next: '13.1'
-  pnpm: 7.29.1
   prettier: ^2.7.1
   prettier-plugin-prisma: 4.4.0
   pretty-quick: 3.1.3
@@ -46,6 +46,7 @@ dependencies:
   '@blitzjs/auth': 2.0.0-beta.23_i2pl5ua3vxhoctamgpxxjhvhda
   '@blitzjs/next': 2.0.0-beta.23_kkdxivutfj2c2vcwq4tzcpy4zy
   '@blitzjs/rpc': 2.0.0-beta.23_kkdxivutfj2c2vcwq4tzcpy4zy
+  '@chakra-ui/icons': 2.0.17_react@18.2.0
   '@chakra-ui/react': 2.5.1_zjjzhxwqrwa5pkyj7rmjge3vtu
   '@emotion/react': 11.10.6_fan5qbzahqtxlm5dzefqlqx5ia
   '@emotion/styled': 11.10.6_36w5hsinjku373i4fj56ptnobm
@@ -54,7 +55,6 @@ dependencies:
   final-form: 4.20.9
   framer-motion: 9.1.7_biqbaboplfbrettd7655fr4n2y
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
-  pnpm: 7.29.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-final-form: 6.5.9_zunk57bvr2t5bgdbaxawch3xh4
@@ -1843,6 +1843,26 @@ packages:
     dependencies:
       '@chakra-ui/shared-utils': 2.0.5
       '@chakra-ui/system': 2.5.1_xqp3pgpqjlfxxa3zxu4zoc4fba
+      react: 18.2.0
+    dev: false
+
+  /@chakra-ui/icon/3.0.16_react@18.2.0:
+    resolution: {integrity: sha512-RpA1X5Ptz8Mt39HSyEIW1wxAz2AXyf9H0JJ5HVx/dBdMZaGMDJ0HyyPBVci0m4RCoJuyG1HHG/DXJaVfUTVAeg==}
+    peerDependencies:
+      '@chakra-ui/system': '>=2.0.0'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/shared-utils': 2.0.5
+      react: 18.2.0
+    dev: false
+
+  /@chakra-ui/icons/2.0.17_react@18.2.0:
+    resolution: {integrity: sha512-HMJP0WrJgAmFR9+Xh/CBH0nVnGMsJ4ZC8MK6tMgxPKd9/muvn0I4hsicHqdPlLpmB0TlxlhkBAKaVMtOdz6F0w==}
+    peerDependencies:
+      '@chakra-ui/system': '>=2.0.0'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/icon': 3.0.16_react@18.2.0
       react: 18.2.0
     dev: false
 
@@ -8629,12 +8649,6 @@ packages:
   /pluralize/8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
-    dev: false
-
-  /pnpm/7.29.1:
-    resolution: {integrity: sha512-dn+65B2XpMIin7sQZvBIJ2Zyx8Z7LK95qyAvgEPE8qXkWYL/LuwpfMfK9Muc7+zNnpPwiQgtGEsxgOtuabFibQ==}
-    engines: {node: '>=14.6'}
-    hasBin: true
     dev: false
 
   /posix-character-classes/0.1.1:

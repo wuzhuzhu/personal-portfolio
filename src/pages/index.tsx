@@ -1,7 +1,11 @@
-const IndexPage = () => {
-  return (
-    <div>首页</div>
-  )
+import { BlitzPage } from "@blitzjs/auth"
+import { Container, Text } from "@chakra-ui/react"
+import Layout from "src/components/layout"
+
+const Home: BlitzPage = () => {
+  return <Text>Hello, world!</Text>
 }
 
-export default IndexPage
+Home.getLayout = (page) => <Layout>{page}</Layout>
+
+export default Home
