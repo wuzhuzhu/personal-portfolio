@@ -29,6 +29,7 @@ const colors = {
   cucumber: {
     "50": "#F4F7EE",
     "100": "#E1E7CF",
+    "150": "#eff1e5", // hero btn bg
     "200": "#CED8B0",
     "300": "#BBC992",
     "400": "#A8BA73",
@@ -52,9 +53,20 @@ const colors = {
   },
 }
 
+// custom components, example
+const components = {
+  Button: {
+    baseStyle: {
+      fontWeight: "semibold", // defaults to "semibold", not changing
+    },
+  },
+}
+
+// 3. extend the theme
 const theme = extendTheme(
   {
     colors,
+    components,
   },
   withDefaultColorScheme({
     colorScheme: "cucumber",
