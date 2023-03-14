@@ -1,6 +1,4 @@
 import {
-  chakra,
-  shouldForwardProp,
   Box,
   Button,
   Center,
@@ -10,16 +8,12 @@ import {
   Text,
   Flex,
   Heading,
+  chakra,
+  shouldForwardProp,
 } from "@chakra-ui/react"
-import { motion, isValidMotionProp } from "framer-motion"
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons"
-
-const ChakraImage = chakra(motion.image, {
-  /**
-   * Allow motion props and non-Chakra props to be forwarded.
-   */
-  shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
-})
+import { isValidMotionProp, motion } from "framer-motion"
+import { headerButtonVariants } from "@/utils/framer-variants"
 
 const Logo = () => {
   return (
@@ -46,23 +40,13 @@ const Header = () => {
         </Button>
       </HStack>
       <Center w="150px" h="55" role="group">
-        <ChakraImage
+        <Image
           as={motion.img}
           src="/images/btn-nav.svg"
           w="150px"
           height="55"
-          // _hover={{
-          // transform: "scale(1.05, 1)",
-          // transition: "transform 0.2s ease",
-          // }}
-          whileHover={{ scaleX: 1.05 }}
-          // @ts-ignore no problem in operation, although type error appears.
-          transition={{
-            duration: 0.2,
-            bounce: 0.3,
-            damping: 7,
-            type: "spring",
-          }}
+          whileHover="hover"
+          variants={headerButtonVariants}
           position="absolute"
           alt="button-frame"
         />
