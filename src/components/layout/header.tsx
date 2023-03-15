@@ -12,7 +12,7 @@ import {
   shouldForwardProp,
 } from "@chakra-ui/react"
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons"
-import { isValidMotionProp, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { headerButtonVariants } from "@/utils/framer-variants"
 
 const Logo = () => {
