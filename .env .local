@@ -1,6 +1,0 @@
-
-# SQLite is ready to go out of the box, but you can switch to Postgres
-# by first changing the provider from "sqlite" to "postgres" in the Prisma
-# schema file and by second swapping the DATABASE_URL below.
-# DATABASE_URL="file:./db.sqlite"
-DATABASE_URL=postgresql://walter@localhost:5432/walter
