@@ -37,3 +37,23 @@ export const staggerChildVariants = {
     },
   },
 };
+
+// scroll to Show/Hide Header
+export const scrollHeaderVariants = {
+  hidden: {
+    y: -25,
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};

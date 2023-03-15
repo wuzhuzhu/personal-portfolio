@@ -12,8 +12,10 @@ import {
   shouldForwardProp,
 } from "@chakra-ui/react"
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons"
-import { motion } from "framer-motion"
-import { headerButtonVariants } from "@/utils/framer-variants"
+import { motion, useScroll, useSpring, useTransform } from "framer-motion"
+import { headerButtonVariants, scrollHeaderVariants } from "@/utils/framer-variants"
+import { useEffect, useState } from "react"
+import { useHeaderHidden } from "@/utils/hooks"
 
 const Logo = () => {
   return (
@@ -24,8 +26,17 @@ const Logo = () => {
 }
 
 const Header = () => {
+  const [hidden, scrollHeaderVariants] = useHeaderHidden()
   return (
-    <HStack w="full" justify="space-between">
+    <HStack
+      w="full"
+      justify="space-between"
+      as={motion.div}
+      // @ts-ignore
+      variants={scrollHeaderVariants}
+      initial="visible"
+      animate={hidden ? "hidden" : "visible"}
+    >
       <HStack spacing="8">
         <Logo />
         <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
@@ -38,6 +49,7 @@ const Header = () => {
           En
           <ChevronDownIcon />
         </Button>
+        <Text>{hidden ? "hidden" : "show"}</Text>
       </HStack>
       <Center w="150px" h="55" role="group">
         <Image
