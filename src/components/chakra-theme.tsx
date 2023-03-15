@@ -1,73 +1,81 @@
-import { extendBaseTheme } from '@chakra-ui/react'
-// `@chakra-ui/theme` is a part of the base install with `@chakra-ui/react`
-import chakraTheme from '@chakra-ui/theme'
-
-const { Button } = chakraTheme.components
-
+import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react"
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
-  primary: {
-    100: '#e7e7fd', // pale blue bg
-    500: '#0b1e5b', // deep blue text
+  steelGray: {
+    "50": "#F0EFF5",
+    "100": "#D6D3E3",
+    "200": "#BCB7D2",
+    "300": "#A29BC0",
+    "400": "#887FAE",
+    "500": "#6D639C",
+    "600": "#574F7D",
+    "700": "#423B5E",
+    "800": "#2C283E",
+    "900": "#16141F",
   },
-  secondary: {
-    100: '#F7F8F2', // light green, for bg
-    500: '#7fb6ob', // vivid green, for text
+  saltpan: {
+    "50": "#EFF6EE",
+    "100": "#D3E7CF",
+    "200": "#B6D8B1",
+    "300": "#9AC992",
+    "400": "#7EB974",
+    "500": "#61AA55",
+    "600": "#4E8844",
+    "700": "#3A6633",
+    "800": "#274422",
+    "900": "#132211",
+  },
+  cucumber: {
+    "50": "#F4F7EE",
+    "100": "#E1E7CF",
+    "150": "#eff1e5", // hero btn bg
+    "200": "#CED8B0",
+    "300": "#BBC992",
+    "400": "#A8BA73",
+    "500": "#95AB54",
+    "600": "#778943",
+    "700": "#596633",
+    "800": "#3C4422",
+    "900": "#1E2211",
+  },
+  purple: {
+    "50": "#F0EEF6",
+    "100": "#D6D0E7",
+    "200": "#BCB2D7",
+    "300": "#A293C7",
+    "400": "#8875B8",
+    "500": "#6D57A8",
+    "600": "#574686",
+    "700": "#423465",
+    "800": "#2C2343",
+    "900": "#161122",
   },
 }
 
-const layerStyles = {
-  tropicalIndigo:
-  {
-    50: '#ede6ff',
-    100: '#c6b7fc',
-    200: '#a088f7', // main
-    300: '#7958f3',
-    400: '#5429ef',
-    500: '#3b10d5',
-    600: '#2e0ca6',
-    700: '#200877',
-    800: '#12044a',
-    900: '#06011d',
+// custom components, example
+const components = {
+  Button: {
+    baseStyle: {
+      fontWeight: "semibold", // defaults to "semibold", not changing
+    },
   },
-  spaceCadet:
-  {
-    50: '#f0f0fa',
-    100: '#d3d1e0',
-    200: '#b5b3ca', // bg
-    300: '#9894b5',
-    400: '#7a769f',
-    500: '#615d86',
-    600: '#4b4768',
-    700: '#36334b',
-    800: '#201f2e', // main - text
-    900: '#0b0913',
-  },
-  green:
-  {
-    50: '#f5fbe4',
-    100: '#e2efc1',
-    200: '#d0e49b', // tea green
-    300: '#bdd974',
-    400: '#abce4e',
-    500: '#92b435', // apple green
-    600: '#718c28',
-    700: '#50641b',
-    800: '#2f3c0d',
-    900: '#0f1500',
-  },
-  appleGreen:
-
 }
 
-
-const theme = extendBaseTheme({
-  components: {
-    Button,
+// 3. extend the theme
+const theme = extendTheme(
+  {
+    colors,
+    components,
   },
-  colors,
-  layerStyles
-})
+  withDefaultColorScheme({
+    colorScheme: "cucumber",
+    components: ["Button"],
+  }),
+  withDefaultColorScheme({
+    colorScheme: "steelGray",
+    components: ["Heading", "Text"],
+  })
+)
 
 export default theme
