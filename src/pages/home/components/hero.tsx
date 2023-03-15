@@ -1,5 +1,4 @@
 import React, { memo } from "react"
-import { Hepta_Slab } from "next/font/google"
 import { Icon, Button, HStack, Text, VStack, Image } from "@chakra-ui/react"
 import { GrApple, GrAndroid } from "react-icons/gr"
 import { motion } from "framer-motion"
@@ -10,9 +9,7 @@ import {
   staggerParentVariants,
 } from "@/utils/framer-variants"
 import HeroGallery from "./hero-gallery"
-
-// If loading a variable font, you don't need to specify the font weight
-const heptaSlab = Hepta_Slab({ subsets: ["latin"] })
+import fonts from "@/utils/fonts"
 
 const HeroBtn = ({ icon, text }) => {
   return (
@@ -59,13 +56,12 @@ const Hero = () => {
           as={motion.p}
           variants={staggerChildVariants}
           fontSize="5xl"
-          className={heptaSlab.className}
+          className={fonts.heptaSlab.className}
         >
-          More ways to grow your money
+          Empowering Frontend Teams, Scaling Success
         </Text>
         <Text as={motion.p} variants={staggerChildVariants} fontSize="xl">
-          Want to expand your reach? Get access to American and crypto markets with a multi-currency
-          account
+          Leveraging AI and Web Innovations to Drive Success - Open to Full/Part-Time Positions
         </Text>
         <HStack as={motion.div} variants={staggerChildVariants} spacing={4}>
           <HeroBtn icon={GrApple} text="App Store"></HeroBtn>

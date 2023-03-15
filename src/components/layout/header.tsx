@@ -16,6 +16,7 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion"
 import { headerButtonVariants, scrollHeaderVariants } from "@/utils/framer-variants"
 import { useEffect, useState } from "react"
 import { useHeaderHidden } from "@/utils/hooks"
+import fonts from "@/utils/fonts"
 
 const Logo = () => {
   return (
@@ -40,7 +41,10 @@ const Header = () => {
       <HStack spacing="8">
         <Logo />
         <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
-          About
+          Blog
+        </Button>
+        <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
+          Showcase
         </Button>
         <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
           Contact
@@ -49,7 +53,6 @@ const Header = () => {
           En
           <ChevronDownIcon />
         </Button>
-        <Text>{hidden ? "hidden" : "show"}</Text>
       </HStack>
       <Center w="150px" h="55" role="group">
         <Image
@@ -62,7 +65,9 @@ const Header = () => {
           position="absolute"
           alt="button-frame"
         />
-        Download
+        <Text fontSize="lg" className={fonts.ptSans.className}>
+          Hire Me
+        </Text>
       </Center>
     </HStack>
   )

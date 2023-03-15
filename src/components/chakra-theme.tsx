@@ -41,7 +41,7 @@ const colors = {
   },
   purple: {
     "50": "#F0EEF6",
-    "100": "#D6D0E7",
+    "100": "#e7e7fd", // skill btn bg
     "200": "#BCB2D7",
     "300": "#A293C7",
     "400": "#8875B8",

@@ -2,13 +2,14 @@ import { BlitzPage } from "@blitzjs/auth"
 import { Box, Container, HStack, Text, VStack, Image } from "@chakra-ui/react"
 import Layout from "src/components/layout"
 import Hero from "src/pages/home/components/hero"
-import HeroGallery from "./home/components/hero-gallery"
+import Ribbon from "./home/components/ribbon"
 
 const Home: BlitzPage = () => {
   return (
-    <Box>
+    <VStack w="full" spacing="20">
       <Hero />
-    </Box>
+      <Ribbon></Ribbon>
+    </VStack>
   )
 }
 
