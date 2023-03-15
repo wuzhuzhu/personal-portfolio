@@ -38,6 +38,22 @@ export const staggerChildVariants = {
   },
 };
 
+export const showUpVariants = {
+  hidden: {
+    scale: 0.6,
+    opacity: 0,
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      delay: 0.6,
+      ease: "easeOut",
+    },
+  }
+}
+
 // scroll to Show/Hide Header
 export const scrollHeaderVariants = {
   hidden: {
