@@ -1,6 +1,9 @@
-import { Box, Center, VStack, Text } from "@chakra-ui/react"
+import fonts from "@/utils/fonts"
+import { Box, Center, VStack, Text, HStack } from "@chakra-ui/react"
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion"
 import React, { useRef } from "react"
+
+import { Frame } from "./hero-gallery"
 
 const cards = [
   {
@@ -34,12 +37,29 @@ const Card = ({ title, description, i }: CardProps) => {
       py="12"
       px="6"
       zIndex={i}
+      // @ts-ignore
       sx={{ position: "-webkit-sticky", /* Safari */ position: "sticky", top: "0" }}
     >
-      <VStack w="full" h="full" bg="purple.100" borderRadius="80">
-        <Text>{title}</Text>
-        <Text>{description}</Text>
-      </VStack>
+      <HStack w="full" h="full" bg="purple.100" borderRadius="80" justify="center">
+        <VStack flex={1} align="center">
+          <Box>
+            <Text
+              className={fonts.heptaSlab.className}
+              maxW="460px"
+              fontSize="3xl"
+              fontWeight="semibold"
+            >
+              {title}
+            </Text>
+            <Text maxW="460px" mt="4">
+              {description}
+            </Text>
+          </Box>
+        </VStack>
+        <Center flex={1}>
+          <Frame h="500px" w="350px"></Frame>
+        </Center>
+      </HStack>
     </Center>
   )
 }

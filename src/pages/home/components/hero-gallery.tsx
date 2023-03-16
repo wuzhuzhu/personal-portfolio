@@ -1,13 +1,21 @@
 import { Box, Flex, HStack } from "@chakra-ui/react"
+import { type } from "os"
 
-export const Frame = ({ y, shadow }) => {
+type FrameProps = {
+  y?: number | string
+  shadow?: number | string
+  h?: number | string
+  w?: string
+}
+
+export const Frame = ({ y = 0, shadow = "none", h = "80", w = "200px" }: FrameProps) => {
   return (
     <Box
       transform={`translateY(${y}px)`}
       bg="steelGray.800"
       boxShadow={shadow}
-      h="80"
-      w="200px"
+      h={h}
+      w={w}
       borderRadius="full"
     >
       {/* hero-gallery */}
