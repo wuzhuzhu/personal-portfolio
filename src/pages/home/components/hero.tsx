@@ -38,7 +38,7 @@ const HeroBtn = ({ icon, text }) => {
 
 const Hero = () => {
   return (
-    <HStack>
+    <HStack position="relative">
       <VStack
         as={motion.div}
         display="flex"
@@ -49,6 +49,7 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
         variants={staggerParentVariants}
+
         // @ts-ignore no problem in operation, although type error appears.
         // transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
       >
@@ -72,7 +73,7 @@ const Hero = () => {
       <Image
         as={motion.img}
         position="absolute"
-        bottom="0"
+        bottom="-250"
         left="50%"
         transform="translateX(-50%)"
         src="/images/hero-bg.png"

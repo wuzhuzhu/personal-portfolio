@@ -4,11 +4,10 @@ import { Box, Container, Flex, VStack } from "@chakra-ui/react"
 import { BlitzLayout } from "@blitzjs/next"
 
 import Header from "./header"
-
-const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
-  title,
-  children,
-}) => {
+interface LayoutProps {
+  title?: string
+}
+const Layout = ({ children }) => {
   return (
     <>
       <Head>
