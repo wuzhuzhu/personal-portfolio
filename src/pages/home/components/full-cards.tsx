@@ -1,5 +1,5 @@
 import { Box, Center, VStack, Text } from "@chakra-ui/react"
-import { motion, useScroll, useSpring, useTransform } from "framer-motion"
+import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion"
 import React, { useRef } from "react"
 
 const cards = [
@@ -25,10 +25,18 @@ type CardProps = {
   description: string
   i: number
 }
-const Card = ({ title, description, i, ref }: CardProps) => {
+const Card = ({ title, description, i }: CardProps) => {
   return (
-    <Center as={motion.div} w="100vw" h="100vh" p="8" zIndex={i}>
-      <VStack w="full" h="full" bg="purple.100">
+    <Center
+      as={motion.div}
+      w="100vw"
+      h="100vh"
+      py="12"
+      px="6"
+      zIndex={i}
+      sx={{ position: "-webkit-sticky", /* Safari */ position: "sticky", top: "0" }}
+    >
+      <VStack w="full" h="full" bg="purple.100" borderRadius="80">
         <Text>{title}</Text>
         <Text>{description}</Text>
       </VStack>

@@ -11,6 +11,7 @@ const Home: BlitzPage = () => {
       <Hero />
       <Ribbon />
       <FullCards />
+      <Ribbon />
     </VStack>
   )
 }

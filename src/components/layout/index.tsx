@@ -1,18 +1,27 @@
+import Head from "next/head"
 import { Box, Container, Flex, VStack } from "@chakra-ui/react"
 import Header from "./header"
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  title?: string
+}
+
+const Layout = ({ children, title }) => {
   return (
-    <Box h="100vh" bg="cucumber.50">
-      <Container h="full" w="full" maxW="container.xl">
-        <Flex py={8} h="full" w="full">
+    <>
+      <Head>
+        <title>{title || "interview-run"}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <VStack minH="100vh" bg="cucumber.50" spacing="8">
+        <Header />
+        <Container h="full" w="full" maxW="container.xl">
           <VStack backgroundColor="cucumber.50" h="full" w="full" spacing={20}>
-            <Header />
             {children}
           </VStack>
-        </Flex>
-      </Container>
-    </Box>
+        </Container>
+      </VStack>
+    </>
   )
 }
 

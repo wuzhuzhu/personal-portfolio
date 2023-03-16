@@ -31,6 +31,8 @@ const Header = () => {
   return (
     <HStack
       w="full"
+      py="8"
+      px="16"
       justify="space-between"
       as={motion.div}
       // @ts-ignore
