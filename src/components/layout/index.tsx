@@ -1,18 +1,30 @@
+import Head from "next/head"
+import React, { FC } from "react"
 import { Box, Container, Flex, VStack } from "@chakra-ui/react"
+import { BlitzLayout } from "@blitzjs/next"
+
 import Header from "./header"
 
-const Layout = ({ children }) => {
+const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
+  title,
+  children,
+}) => {
   return (
-    <Box h="100vh" bg="cucumber.50">
-      <Container h="full" w="full" maxW="container.xl">
-        <Flex py={8} h="full" w="full">
-          <VStack backgroundColor="cucumber.50" h="full" w="full" spacing={20}>
+    <>
+      <Head>
+        <title>{title || "Walter Wu | Fullstack|Frontend|Engineering Management"}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <Box bg="cucumber.50">
+        <Container minH="full" w="full" maxW="container.xl">
+          <VStack backgroundColor="cucumber.50" h="full" w="full" spacing={20} py={8}>
             <Header />
             {children}
           </VStack>
-        </Flex>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </>
   )
 }
 

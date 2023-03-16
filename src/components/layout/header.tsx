@@ -54,7 +54,7 @@ const Header = () => {
           <ChevronDownIcon />
         </Button>
       </HStack>
-      <Center w="150px" h="55" role="group">
+      <Center w="150px" h="55" role="group" position="relative">
         <Image
           as={motion.img}
           src="/images/btn-nav.svg"
