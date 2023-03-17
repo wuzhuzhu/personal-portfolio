@@ -7,7 +7,7 @@ import Header from "./header"
 interface LayoutProps {
   title?: string
 }
-const Layout = ({ children }) => {
+const Layout = ({ children, title }) => {
   return (
     <>
       <Head>
@@ -16,9 +16,9 @@ const Layout = ({ children }) => {
       </Head>
 
       <Box bg="cucumber.50">
+        <Header />
         <Container minH="full" w="full" maxW="container.xl">
           <VStack backgroundColor="cucumber.50" h="full" w="full" spacing={20} py={8}>
-            <Header />
             {children}
           </VStack>
         </Container>

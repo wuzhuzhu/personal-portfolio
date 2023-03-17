@@ -1,6 +1,6 @@
 import fonts from "@/utils/fonts"
 import { Box, Center, VStack, Text, HStack } from "@chakra-ui/react"
-import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion"
+import { motion, MotionValue, useInView, useScroll, useSpring, useTransform } from "framer-motion"
 import React, { useRef } from "react"
 
 import { Frame } from "./hero-gallery"
@@ -27,8 +27,19 @@ type CardProps = {
   title: string
   description: string
   i: number
+  ref: React.RefObject<HTMLDivElement>
+  scrollYProgress: MotionValue<number>
 }
-const Card = ({ title, description, i }: CardProps) => {
+const Card = ({ title, description, i, scrollYProgress, ref }: CardProps) => {
+  const yInputOffset = [(i + 1) * (1 / 3), (i + 3) * (1 / 3)]
+  const yInput = [i * (1 / 3), (i + 1) * (1 / 3)]
+  const scale = useTransform(scrollYProgress, yInputOffset, [1, 0.9])
+  const opacity = useTransform(scrollYProgress, yInputOffset, [1, 0.5])
+  const y = useTransform(scrollYProgress, yInput, [0, 20 * i])
+  /*   const background = useTransform(scrollYProgress, yInputOffset, [
+    "var(--chakra-colors-purple-100)",
+    "var(--chakra-colors-purple-50)",
+  ]) */
   return (
     <Center
       as={motion.div}
@@ -37,12 +48,29 @@ const Card = ({ title, description, i }: CardProps) => {
       py="12"
       px="6"
       zIndex={i}
-      // @ts-ignore
+      // @ts-ignore mixed type
+      style={{ scale, transformOrigin: "top center" }}
+      // @ts-ignore mixed type
       sx={{ position: "-webkit-sticky", /* Safari */ position: "sticky", top: "0" }}
     >
-      <HStack w="full" h="full" bg="purple.100" borderRadius="80" justify="center">
+      <HStack
+        as={motion.div}
+        w="full"
+        h="full"
+        style={{
+          // @ts-ignore mixed type
+          opacity,
+          y,
+          // background,
+        }}
+        bg="purple.100"
+        borderRadius="80"
+        justify="center"
+        shadow="md"
+      >
         <VStack flex={1} align="center">
           <Box>
+            {/* <motion.p>{scrollYProgress}</motion.p> */}
             <Text
               className={fonts.heptaSlab.className}
               maxW="460px"
@@ -66,7 +94,7 @@ const Card = ({ title, description, i }: CardProps) => {
 
 const FullCards = () => {
   const cardsRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: cardsRef })
+  const { scrollYProgress } = useScroll({ target: cardsRef, offset: ["start end", "end"] })
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -83,7 +111,7 @@ const FullCards = () => {
         123123
       </Box>
       {cards.map((card, i) => (
-        <Card {...card} i={i} key={`card-${i}`} />
+        <Card {...card} i={i} ref={cardsRef} key={`card-${i}`} scrollYProgress={scrollYProgress} />
       ))}
     </VStack>
   )
