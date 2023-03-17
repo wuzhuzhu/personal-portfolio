@@ -87,6 +87,7 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
         variants={showUpVariants}
+        // @ts-ignore no problem in operation, although type error appears.
         style={{ y: y }}
       />
     </HStack>

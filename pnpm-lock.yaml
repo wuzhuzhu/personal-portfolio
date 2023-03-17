@@ -9,6 +9,7 @@ specifiers:
   '@emotion/react': 11.10.6
   '@emotion/styled': 11.10.6
   '@next/bundle-analyzer': 12.0.8
+  '@next/env': 13.2.4
   '@prisma/client': 4.10.1
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0
@@ -67,6 +68,7 @@ dependencies:
 
 devDependencies:
   '@next/bundle-analyzer': 12.0.8
+  '@next/env': 13.2.4
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/react-hooks': 8.0.1_2zx2umvpluuhvlq44va5bta2da
@@ -2960,7 +2962,6 @@ packages:
 
   /@next/env/13.2.4:
     resolution: {integrity: sha512-+Mq3TtpkeeKFZanPturjcXt+KHfKYnLlX6jMLyCrmpq6OOs4i1GqBOAauSkii9QeKCMTYzGppar21JU57b/GEA==}
-    dev: false
 
   /@next/eslint-plugin-next/12.3.1:
     resolution: {integrity: sha512-sw+lTf6r6P0j+g/n9y4qdWWI2syPqZx+uc0+B/fRENqfR3KpSid6MIKqc9gNwGhJASazEQ5b3w8h4cAET213jw==}

@@ -40,7 +40,17 @@ export const RibbonItem = ({ text }: { text: String }) => {
 const Ribbon = () => {
   const y = usePageParallax(-300)
   return (
-    <HStack w="100vw" spacing="1" overflowX="hidden" as={motion.div} style={{ y, rotate: -3 }}>
+    <HStack
+      w="100vw"
+      spacing="1"
+      overflowX="hidden"
+      as={motion.div}
+      style={{
+        y,
+        // @ts-ignore
+        rotate: -3,
+      }}
+    >
       <CMarquee pauseOnHover gradientColor={[244, 247, 238]}>
         {SKILLS.map((skill, i) => (
           <RibbonItem text={skill} key={`r-i-${i}`} />

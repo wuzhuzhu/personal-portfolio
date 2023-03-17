@@ -1,10 +1,10 @@
 import { BlitzPage } from "@blitzjs/auth"
 import { Box, Container, HStack, Text, VStack, Image } from "@chakra-ui/react"
 import Layout from "src/components/layout"
-import Hero from "src/pages/home/components/hero"
-import FullCards from "./home/components/full-cards"
-import ImmersionScroll from "./home/components/immersion-scroll"
-import Ribbon from "./home/components/ribbon"
+import Hero from "@/components/home/hero"
+import FullCards from "@/components/home/full-cards"
+import ImmersionScroll from "@/components/home/immersion-scroll"
+import Ribbon from "@/components/home/ribbon"
 
 const Home: BlitzPage = () => {
   return (
