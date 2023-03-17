@@ -1,5 +1,7 @@
 import fonts from "@/utils/fonts"
+import { usePageParallax } from "@/utils/hooks"
 import { chakra, Box, HStack, Text, Center } from "@chakra-ui/react"
+import { motion } from "framer-motion"
 import React from "react"
 import Marquee from "react-fast-marquee"
 
@@ -36,8 +38,9 @@ export const RibbonItem = ({ text }: { text: String }) => {
 }
 
 const Ribbon = () => {
+  const y = usePageParallax(-300)
   return (
-    <HStack w="100vw" spacing="1" overflowX="hidden" transform="rotate(-3deg)">
+    <HStack w="100vw" spacing="1" overflowX="hidden" as={motion.div} style={{ y, rotate: -3 }}>
       <CMarquee pauseOnHover gradientColor={[244, 247, 238]}>
         {SKILLS.map((skill, i) => (
           <RibbonItem text={skill} key={`r-i-${i}`} />

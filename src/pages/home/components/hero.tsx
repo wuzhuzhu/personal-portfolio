@@ -1,7 +1,7 @@
 import React, { memo } from "react"
-import { Icon, Button, HStack, Text, VStack, Image } from "@chakra-ui/react"
+import { Icon, Button, HStack, Text, VStack, Image, Box } from "@chakra-ui/react"
 import { GrApple, GrAndroid } from "react-icons/gr"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 
 import {
   showUpVariants,
@@ -9,8 +9,10 @@ import {
   staggerParentVariants,
 } from "@/utils/framer-variants"
 import HeroGallery from "./hero-gallery"
+import { usePageParallax, useParallax } from "@/utils/hooks"
 import fonts from "@/utils/fonts"
 
+const MBox = motion(Box)
 const HeroBtn = ({ icon, text }) => {
   return (
     <Button
@@ -37,6 +39,8 @@ const HeroBtn = ({ icon, text }) => {
 }
 
 const Hero = () => {
+  const y = usePageParallax(500)
+
   return (
     <HStack position="relative">
       <VStack
@@ -53,6 +57,8 @@ const Hero = () => {
         // @ts-ignore no problem in operation, although type error appears.
         // transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
       >
+        {/* A parallax indicator */}
+        {/* <MBox bg="red" h="8" w="8" position="fixed" top="0" style={{ y }}></MBox> */}
         <Text
           as={motion.p}
           variants={staggerChildVariants}
@@ -81,6 +87,7 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
         variants={showUpVariants}
+        style={{ y: y }}
       />
     </HStack>
   )
