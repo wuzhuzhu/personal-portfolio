@@ -95,21 +95,8 @@ const Card = ({ title, description, i, scrollYProgress, ref }: CardProps) => {
 const FullCards = () => {
   const cardsRef = useRef(null)
   const { scrollYProgress } = useScroll({ target: cardsRef, offset: ["start end", "end"] })
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  })
   return (
     <VStack as={motion.div} ref={cardsRef} position="relative">
-      <Box
-        as={motion.div}
-        border="5px solid"
-        borderColor="red"
-        style={{ position: "fixed", left: 0, top: "50%", scaleY, zIndex: 10, width: 5 }}
-      >
-        123123
-      </Box>
       {cards.map((card, i) => (
         <Card {...card} i={i} ref={cardsRef} key={`card-${i}`} scrollYProgress={scrollYProgress} />
       ))}

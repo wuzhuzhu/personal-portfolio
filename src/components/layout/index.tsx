@@ -6,8 +6,9 @@ import { BlitzLayout } from "@blitzjs/next"
 import Header from "./header"
 interface LayoutProps {
   title?: string
+  children?: React.ReactNode
 }
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title }: LayoutProps) => {
   return (
     <>
       <Head>

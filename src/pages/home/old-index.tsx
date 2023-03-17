@@ -48,7 +48,7 @@ const UserInfo = () => {
   }
 }
 
-const Home: BlitzPage = () => {
+const OldIndex: BlitzPage = () => {
   return (
     <Layout title="Home">
       <div className={styles.globe} />
@@ -192,4 +192,4 @@ const Home: BlitzPage = () => {
   )
 }
 
-export default Home
+export default OldIndex

@@ -3,6 +3,7 @@ import { Box, Container, HStack, Text, VStack, Image } from "@chakra-ui/react"
 import Layout from "src/components/layout"
 import Hero from "src/pages/home/components/hero"
 import FullCards from "./home/components/full-cards"
+import ImmersionScroll from "./home/components/immersion-scroll"
 import Ribbon from "./home/components/ribbon"
 
 const Home: BlitzPage = () => {
@@ -11,7 +12,7 @@ const Home: BlitzPage = () => {
       <Hero />
       <Ribbon />
       <FullCards />
-      <Ribbon />
+      <ImmersionScroll />
     </VStack>
   )
 }
