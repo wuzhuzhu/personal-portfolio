@@ -1,4 +1,4 @@
-import { usePageParallax, useParallax } from "@/utils/hooks"
+import { usePageParallax, useParallax } from "@/core/utils/hooks"
 import { Box, Flex, HStack } from "@chakra-ui/react"
 import { motion, useScroll } from "framer-motion"
 import { type } from "os"

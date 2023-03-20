@@ -24,7 +24,7 @@ export function useHeaderHidden() {
       if (scrollY?.current < scrollY?.prev) {
         setHidden(false)
         // @ts-ignore
-      } else if (scrollY?.current > 15 && scrollY?.current > scrollY?.prev) {
+      } else if (scrollY?.current > 10 && scrollY?.current > scrollY?.prev) {
         setHidden(true)
       }
     })

@@ -13,10 +13,18 @@ import {
 } from "@chakra-ui/react"
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons"
 import { motion, useScroll, useSpring, useTransform } from "framer-motion"
-import { headerButtonVariants, scrollHeaderVariants } from "@/utils/framer-variants"
-import { useEffect, useState } from "react"
-import { useHeaderHidden } from "@/utils/hooks"
-import fonts from "@/utils/fonts"
+import { headerButtonVariants, scrollHeaderVariants } from "@/core/utils/framer-variants"
+import { Suspense, useEffect, useState } from "react"
+import { useHeaderHidden } from "@/core/utils/hooks"
+import fonts from "@/core/utils/fonts"
+import { useCurrentUser } from "@/users/hooks/useCurrentUser"
+import { useMutation } from "@blitzjs/rpc"
+import logout from "@/auth/mutations/logout"
+import { useSession } from "@blitzjs/auth"
+import dynamic from "next/dynamic"
+
+// todo: fix this, blitzjs doc doesn't like dynamic imports
+const UserInfo = dynamic(() => import("../user-info"), { ssr: false })
 
 const Logo = () => {
   return (
@@ -46,15 +54,15 @@ const Header = () => {
           Blog
         </Button>
         <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
-          Showcase
-        </Button>
-        <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
           Contact
         </Button>
         <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
           En
           <ChevronDownIcon />
         </Button>
+        <Suspense fallback="Loading">
+          <UserInfo />
+        </Suspense>
       </HStack>
       <Center w="150px" h="55" role="group" position="relative">
         <Image
