@@ -3,7 +3,7 @@ import { Box, Center, VStack, Text, HStack } from "@chakra-ui/react"
 import { motion, MotionValue, useInView, useScroll, useSpring, useTransform } from "framer-motion"
 import React, { useRef } from "react"
 
-import { Frame } from "./hero-gallery"
+import Frame from "./frame"
 
 const cards = [
   {

@@ -3,28 +3,7 @@ import { Box, Flex, HStack } from "@chakra-ui/react"
 import { motion, useScroll } from "framer-motion"
 import { type } from "os"
 import { memo } from "react"
-
-type FrameProps = {
-  y?: number | string
-  shadow?: number | string
-  h?: number | string
-  w?: string
-}
-
-export const Frame = memo(({ y = 0, shadow = "none", h = "80", w = "200px" }: FrameProps) => {
-  return (
-    <Box
-      transform={`translateY(${y}px)`}
-      bg="steelGray.800"
-      boxShadow={shadow}
-      h={h}
-      w={w}
-      borderRadius="full"
-    >
-      {/* hero-gallery */}
-    </Box>
-  )
-})
+import Frame from "./frame"
 
 const HeroGallery = () => {
   const y1 = usePageParallax(-300)

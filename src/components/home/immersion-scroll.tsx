@@ -1,7 +1,7 @@
 import fonts from "@/utils/fonts"
 import { Heading, VStack, Text, Container, HStack } from "@chakra-ui/react"
 import React from "react"
-import { Frame } from "./hero-gallery"
+import Frame from "./frame"
 
 const careerCards = [
   {
