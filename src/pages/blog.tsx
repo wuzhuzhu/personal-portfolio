@@ -10,9 +10,9 @@ import dynamic from "next/dynamic"
 
 const UserInfo = dynamic(() => import("src/components/user-info"), { ssr: false })
 
-const Home: BlitzPage = () => {
+const Blog: BlitzPage = () => {
   return (
-    <Layout title="Home">
+    <Layout title="Blog">
       <Suspense fallback="Loading...">
         <UserInfo />
       </Suspense>
@@ -20,4 +20,4 @@ const Home: BlitzPage = () => {
   )
 }
 
-export default Home
+export default Blog
