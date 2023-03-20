@@ -13,10 +13,10 @@ import {
 } from "@chakra-ui/react"
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons"
 import { motion, useScroll, useSpring, useTransform } from "framer-motion"
-import { headerButtonVariants, scrollHeaderVariants } from "@/utils/framer-variants"
+import { headerButtonVariants, scrollHeaderVariants } from "@/core/utils/framer-variants"
 import { useEffect, useState } from "react"
-import { useHeaderHidden } from "@/utils/hooks"
-import fonts from "@/utils/fonts"
+import { useHeaderHidden } from "@/core/utils/hooks"
+import fonts from "@/core/utils/fonts"
 
 const Logo = () => {
   return (

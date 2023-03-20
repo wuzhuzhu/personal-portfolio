@@ -30,7 +30,9 @@ const UserInfo = () => {
         <div>
           User id: <code>{currentUser.id}</code>
           <br />
-          User role: <code>{currentUser.role}</code>
+          Globe role: <code>{currentUser.role}</code>
+          <br />
+          Memberships: <code>{JSON.stringify(currentUser.memberships)}</code>
         </div>
       </>
     )

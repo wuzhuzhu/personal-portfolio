@@ -1,4 +1,4 @@
-import fonts from "@/utils/fonts"
+import fonts from "@/core/utils/fonts"
 import { Box, Center, VStack, Text, HStack } from "@chakra-ui/react"
 import { motion, MotionValue, useInView, useScroll, useSpring, useTransform } from "framer-motion"
 import React, { useRef } from "react"

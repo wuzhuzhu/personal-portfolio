@@ -7,10 +7,10 @@ import {
   showUpVariants,
   staggerChildVariants,
   staggerParentVariants,
-} from "@/utils/framer-variants"
+} from "@/core/utils/framer-variants"
 import HeroGallery from "./hero-gallery"
-import { usePageParallax, useParallax } from "@/utils/hooks"
-import fonts from "@/utils/fonts"
+import { usePageParallax, useParallax } from "@/core/utils/hooks"
+import fonts from "@/core/utils/fonts"
 
 const MBox = motion(Box)
 const HeroBtn = ({ icon, text }) => {

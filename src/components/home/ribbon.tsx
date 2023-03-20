@@ -1,5 +1,5 @@
-import fonts from "@/utils/fonts"
-import { usePageParallax } from "@/utils/hooks"
+import fonts from "@/core/utils/fonts"
+import { usePageParallax } from "@/core/utils/hooks"
 import { chakra, Box, HStack, Text, Center } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import React from "react"

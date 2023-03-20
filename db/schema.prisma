@@ -12,14 +12,47 @@ generator client {
 
 // --------------------------------------
 
+// https://blitzjs.com/docs/multitenancy
+// The Organization is the "God" model which owns everything for an account
+// An Organization has many Users through Membership
+// Every other model in the system has an organizationId to indicate who owns it.
+// A User can have access to multiple Organizations
+// When assigning an entity to a user, like a task, assign the task to the user's Membership instead of directly to the user.
+// must filter all your queries by organizationId to ensure one user cannot see another user's private data.
+
+model Organization {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String   @unique
+
+  memberships Membership[]
+}
+
+model Membership {
+  id        Int            @id @default(autoincrement())
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  role      MembershipRole @default(USER)
+
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  organizationId Int
+  user           User         @relation(fields: [userId], references: [id])
+  userId         Int
+
+  @@unique([organizationId, userId])
+}
+
 model User {
-  id             Int      @id @default(autoincrement())
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  id             Int        @id @default(autoincrement())
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
   name           String?
-  email          String   @unique
+  email          String     @unique
   hashedPassword String?
-  role           String   @default("USER")
+  role           GlobalRole @default(USER)
+
+  memberships Membership[]
 
   tokens   Token[]
   sessions Session[]
@@ -41,9 +74,9 @@ model Session {
 }
 
 model Token {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
   hashedToken String
   // See note below about TokenType enum
   type        TokenType
@@ -67,4 +100,17 @@ enum Role {
   USER
   ADMIN
   CREATOR
+}
+
+// The owners of the SaaS (you) can have a SUPERADMIN role to access all data
+enum GlobalRole {
+  SUPERADMIN
+  USER
+}
+
+enum MembershipRole {
+  OWNER
+  ADMIN
+  USER
+  VISITOR
 }
