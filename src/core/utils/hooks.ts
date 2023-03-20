@@ -5,7 +5,7 @@ import { scrollHeaderVariants } from "./framer-variants";
 // Parallax by framer motion,
 // https://codesandbox.io/s/framer-motion-parallax-i9gwuc?from-embed=&file=/src/App.tsx:214-345
 // value: A scrollYProgress
-// distance: positive number will move slower than scoll bar, as background items
+// distance: positive number will move slower than scroll bar, as background items
 export function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [0, distance]);
 }
