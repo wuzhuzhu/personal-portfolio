@@ -22,7 +22,8 @@
       "@/*": ["src/*"],
       "@/components/": ["src/components/"],
       "@/api/": ["src/pages/api/"],
-      "@/pages/": ["src/pages/"]
+      "@/pages/": ["src/pages/"],
+      "@/utils/": ["src/utils"]
     }
   },
   "exclude": ["node_modules", "**/*.e2e.ts", "cypress"],

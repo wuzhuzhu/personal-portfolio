@@ -8,7 +8,7 @@ type FrameProps =
   | {
       parallaxDistance?: number
       children: React.ReactNode
-      y?: number
+      y?: number | string
       scrollYProgress: MotionValue<number>
       ref: React.RefObject<HTMLDivElement>
     }
