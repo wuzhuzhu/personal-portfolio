@@ -57,6 +57,20 @@ const Hero = () => {
         // @ts-ignore no problem in operation, although type error appears.
         // transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
       >
+        <Image
+          as={motion.img}
+          position="absolute"
+          bottom="-250"
+          left="50%"
+          transform="translateX(-50%)"
+          src="/images/hero-bg.png"
+          alt="bg"
+          initial="hidden"
+          animate="visible"
+          variants={showUpVariants}
+          // @ts-ignore no problem in operation, although type error appears.
+          style={{ y: y }}
+        />
         {/* A parallax indicator */}
         {/* <MBox bg="red" h="8" w="8" position="fixed" top="0" style={{ y }}></MBox> */}
         <Text
@@ -76,20 +90,6 @@ const Hero = () => {
         </HStack>
       </VStack>
       <HeroGallery />
-      <Image
-        as={motion.img}
-        position="absolute"
-        bottom="-250"
-        left="50%"
-        transform="translateX(-50%)"
-        src="/images/hero-bg.png"
-        alt="bg"
-        initial="hidden"
-        animate="visible"
-        variants={showUpVariants}
-        // @ts-ignore no problem in operation, although type error appears.
-        style={{ y: y }}
-      />
     </HStack>
   )
 }

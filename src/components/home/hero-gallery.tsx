@@ -11,11 +11,11 @@ const HeroGallery = () => {
   return (
     <HStack spacing="2" flex={1} justify="center">
       <motion.div style={{ y: y1 }}>
-        <Frame y="-50" shadow="xl"></Frame>
+        <Frame y={50} shadow="xl"></Frame>
       </motion.div>
 
       <motion.div style={{ y: y2 }}>
-        <Frame y="20" shadow="5xl"></Frame>
+        <Frame y={20} shadow="5xl"></Frame>
       </motion.div>
     </HStack>
   )

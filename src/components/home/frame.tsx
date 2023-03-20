@@ -3,15 +3,13 @@ import { Box, BoxProps } from "@chakra-ui/react"
 import { motion, MotionValue, useScroll } from "framer-motion"
 import { memo } from "react"
 
-type FrameProps =
-  | BoxProps
-  | {
-      parallaxDistance?: number
-      children: React.ReactNode
-      y?: number | string
-      scrollYProgress: MotionValue<number>
-      ref: React.RefObject<HTMLDivElement>
-    }
+type FrameProps = BoxProps & {
+  parallaxDistance?: number
+  children?: React.ReactNode
+  y?: number
+  scrollYProgress?: MotionValue<number>
+  ref?: React.RefObject<HTMLDivElement>
+}
 
 const Frame = ({
   bg = "steelGray.800",
@@ -20,7 +18,7 @@ const Frame = ({
   h = "80",
   w = "200px",
   parallaxDistance,
-  scrollYProgress = 0,
+  scrollYProgress,
   children,
   ref,
   ...rest
@@ -36,14 +34,15 @@ const Frame = ({
       w={w}
       borderRadius="full"
       {...rest}
-      style={{ y: offset }}
+      // @ts-ignore
+      style={{ y }}
     >
       {children}
     </Box>
   )
 }
 
-type TinyFrameProps = Partial<BoxProps> | { parallaxDistance?: number; children: React.ReactNode }
+/* type TinyFrameProps = Partial<BoxProps> | { parallaxDistance?: number; children: React.ReactNode }
 
 export const TinyFrame = (props: TinyFrameProps) => {
   const { parallaxDistance = 0, children, rest } = props
@@ -54,5 +53,5 @@ export const TinyFrame = (props: TinyFrameProps) => {
     </Frame>
   )
 }
-
+ */
 export default Frame
