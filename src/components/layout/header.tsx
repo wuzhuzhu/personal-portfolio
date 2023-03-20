@@ -21,6 +21,10 @@ import { useCurrentUser } from "@/users/hooks/useCurrentUser"
 import { useMutation } from "@blitzjs/rpc"
 import logout from "@/auth/mutations/logout"
 import { useSession } from "@blitzjs/auth"
+import dynamic from "next/dynamic"
+
+// todo: fix this, blitzjs doc doesn't like dynamic imports
+const UserInfo = dynamic(() => import("../user-info"), { ssr: false })
 
 const Logo = () => {
   return (
@@ -56,6 +60,9 @@ const Header = () => {
           En
           <ChevronDownIcon />
         </Button>
+        <Suspense fallback="Loading">
+          <UserInfo />
+        </Suspense>
       </HStack>
       <Center w="150px" h="55" role="group" position="relative">
         <Image
