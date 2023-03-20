@@ -5,6 +5,7 @@ import Hero from "@/components/home/hero"
 import FullCards from "@/components/home/full-cards"
 import ImmersionScroll from "@/components/home/immersion-scroll"
 import Ribbon from "@/components/home/ribbon"
+import Education from "@/components/home/education"
 
 const Home: BlitzPage = () => {
   return (
@@ -13,6 +14,7 @@ const Home: BlitzPage = () => {
       <Ribbon />
       <FullCards />
       <ImmersionScroll />
+      <Education></Education>
     </VStack>
   )
 }
