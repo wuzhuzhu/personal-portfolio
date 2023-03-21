@@ -21,7 +21,7 @@ generator client {
 // must filter all your queries by organizationId to ensure one user cannot see another user's private data.
 
 model Organization {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String   @unique
@@ -30,21 +30,21 @@ model Organization {
 }
 
 model Membership {
-  id        Int            @id @default(autoincrement())
+  id        String         @id @default(uuid())
   createdAt DateTime       @default(now())
   updatedAt DateTime       @updatedAt
   role      MembershipRole @default(USER)
 
   organization   Organization @relation(fields: [organizationId], references: [id])
-  organizationId Int
+  organizationId String
   user           User         @relation(fields: [userId], references: [id])
-  userId         Int
+  userId         String
 
   @@unique([organizationId, userId])
 }
 
 model User {
-  id             Int        @id @default(autoincrement())
+  id             String     @id @default(uuid())
   createdAt      DateTime   @default(now())
   updatedAt      DateTime   @updatedAt
   name           String?
@@ -69,8 +69,8 @@ model Session {
   publicData         String?
   privateData        String?
 
-  user   User? @relation(fields: [userId], references: [id])
-  userId Int?
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String?
 }
 
 model Token {
@@ -83,8 +83,8 @@ model Token {
   expiresAt   DateTime
   sentTo      String
 
-  user   User @relation(fields: [userId], references: [id])
-  userId Int
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
 
   @@unique([hashedToken, type])
 }
