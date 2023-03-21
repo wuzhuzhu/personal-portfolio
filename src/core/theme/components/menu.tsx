@@ -1,3 +1,4 @@
+// @ts-ignore
 import { menuAnatomy } from "@chakra-ui/anatomy"
 import { createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react"
 
