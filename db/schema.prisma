@@ -92,6 +92,7 @@ model Token {
 // NOTE: It's highly recommended to use an enum for the token type
 //       but enums only work in Postgres.
 //       See: https://blitzjs.com/docs/database-overview#switch-to-postgre-sql
+
 enum TokenType {
   RESET_PASSWORD
 }
@@ -103,6 +104,7 @@ enum Role {
 }
 
 // The owners of the SaaS (you) can have a SUPERADMIN role to access all data
+
 enum GlobalRole {
   SUPERADMIN
   USER
@@ -113,4 +115,11 @@ enum MembershipRole {
   ADMIN
   USER
   VISITOR
+}
+
+model Question {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  text      String
 }
