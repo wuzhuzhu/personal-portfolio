@@ -23,8 +23,7 @@ import logout from "@/auth/mutations/logout"
 import { useSession } from "@blitzjs/auth"
 import dynamic from "next/dynamic"
 
-// todo: fix this, blitzjs doc doesn't like dynamic imports
-const UserInfo = dynamic(() => import("../user-info"), { ssr: false })
+import UserInfo from "../user-info"
 
 const Logo = () => {
   return (
