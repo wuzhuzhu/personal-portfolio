@@ -1,6 +1,6 @@
 import { BlitzPage } from "@blitzjs/auth"
 import { Box, Container, HStack, Text, VStack, Image } from "@chakra-ui/react"
-import Layout from "src/components/layout"
+import Layout from "@/components/layout"
 import Hero from "@/components/home/hero"
 import FullCards from "@/components/home/full-cards"
 import ImmersionScroll from "@/components/home/immersion-scroll"

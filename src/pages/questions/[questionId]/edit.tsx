@@ -1,22 +1,19 @@
-import { Suspense } from "react";
-import { Routes } from "@blitzjs/next";
-import Head from "next/head";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useQuery, useMutation } from "@blitzjs/rpc";
-import { useParam } from "@blitzjs/next";
+import { Suspense } from "react"
+import { Routes } from "@blitzjs/next"
+import Head from "next/head"
+import Link from "next/link"
+import { useRouter } from "next/router"
+import { useQuery, useMutation } from "@blitzjs/rpc"
+import { useParam } from "@blitzjs/next"
 
-import Layout from "src/core/layouts/Layout";
-import getQuestion from "src/questions/queries/getQuestion";
-import updateQuestion from "src/questions/mutations/updateQuestion";
-import {
-  QuestionForm,
-  FORM_ERROR,
-} from "src/questions/components/QuestionForm";
+import Layout from "@/core/layouts/Layout"
+import getQuestion from "@/questions/queries/getQuestion"
+import updateQuestion from "@/questions/mutations/updateQuestion"
+import { QuestionForm, FORM_ERROR } from "@/questions/components/QuestionForm"
 
 export const EditQuestion = () => {
-  const router = useRouter();
-  const questionId = useParam("questionId", "number");
+  const router = useRouter()
+  const questionId = useParam("questionId", "number")
   const [question, { setQueryData }] = useQuery(
     getQuestion,
     { id: questionId },
@@ -24,8 +21,8 @@ export const EditQuestion = () => {
       // This ensures the query never refreshes and overwrites the form data while the user is editing.
       staleTime: Infinity,
     }
-  );
-  const [updateQuestionMutation] = useMutation(updateQuestion);
+  )
+  const [updateQuestionMutation] = useMutation(updateQuestion)
 
   return (
     <>
@@ -49,23 +46,21 @@ export const EditQuestion = () => {
               const updated = await updateQuestionMutation({
                 id: question.id,
                 ...values,
-              });
-              await setQueryData(updated);
-              await router.push(
-                Routes.ShowQuestionPage({ questionId: updated.id })
-              );
+              })
+              await setQueryData(updated)
+              await router.push(Routes.ShowQuestionPage({ questionId: updated.id }))
             } catch (error: any) {
-              console.error(error);
+              console.error(error)
               return {
                 [FORM_ERROR]: error.toString(),
-              };
+              }
             }
           }}
         />
       </div>
     </>
-  );
-};
+  )
+}
 
 const EditQuestionPage = () => {
   return (
@@ -78,10 +73,10 @@ const EditQuestionPage = () => {
         <Link href={Routes.QuestionsPage()}>Questions</Link>
       </p>
     </div>
-  );
-};
+  )
+}
 
-EditQuestionPage.authenticate = true;
-EditQuestionPage.getLayout = (page) => <Layout>{page}</Layout>;
+EditQuestionPage.authenticate = true
+EditQuestionPage.getLayout = (page) => <Layout>{page}</Layout>
 
-export default EditQuestionPage;
+export default EditQuestionPage

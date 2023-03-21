@@ -1,10 +1,9 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import { useCurrentUser } from "src/users/hooks/useCurrentUser"
-import logout from "src/auth/mutations/logout"
+import { useCurrentUser } from "@/users/hooks/useCurrentUser"
+import logout from "@/auth/mutations/logout"
 import { useMutation } from "@blitzjs/rpc"
 import { Routes, BlitzPage } from "@blitzjs/next"
-import styles from "src/styles/Home.module.css"
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 

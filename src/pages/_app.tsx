@@ -1,8 +1,8 @@
 import { ErrorFallbackProps, ErrorComponent, ErrorBoundary, AppProps } from "@blitzjs/next"
 import { AuthenticationError, AuthorizationError } from "blitz"
 import React, { Suspense } from "react"
-import { withBlitz } from "src/blitz-client"
-import "src/styles/globals.css"
+import { withBlitz } from "@/blitz-client"
+import "@/styles/globals.css"
 
 import { ChakraProvider } from "@chakra-ui/react"
 import chakraTheme from "../core/theme"
