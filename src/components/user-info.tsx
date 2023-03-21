@@ -5,6 +5,8 @@ import logout from "src/auth/mutations/logout"
 import { useMutation } from "@blitzjs/rpc"
 import { Routes, BlitzPage } from "@blitzjs/next"
 import styles from "src/styles/Home.module.css"
+import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
+import { ChevronDownIcon } from "@chakra-ui/icons"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
@@ -18,29 +20,36 @@ const UserInfo = () => {
   if (currentUser) {
     return (
       <>
-        <button
-          className={styles.button}
-          onClick={async () => {
-            await logoutMutation()
-          }}
-        >
-          Logout
-        </button>
-        <div>
-          User id: <code>{currentUser.id}</code>
-          <br />
-          User role: <code>{currentUser.role}</code>
-        </div>
+        <Menu>
+          <MenuButton
+            as={Button}
+            rightIcon={<ChevronDownIcon />}
+            variant="ghost"
+            colorScheme="steelGray"
+            color="steelGray.800"
+          >
+            {currentUser.name}
+          </MenuButton>
+          <MenuList>
+            <MenuItem>Settings</MenuItem>
+            <MenuItem
+              onClick={async () => {
+                await logoutMutation()
+              }}
+            >
+              Logout
+            </MenuItem>
+          </MenuList>
+        </Menu>
       </>
     )
   } else {
     return (
       <>
-        <Link href={Routes.SignupPage()} className={styles.button}>
-          <strong>Sign Up</strong>
-        </Link>
-        <Link href={Routes.LoginPage()} className={styles.loginButton}>
-          <strong>Login</strong>
+        <Link href={Routes.LoginPage()}>
+          <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
+            Login
+          </Button>
         </Link>
       </>
     )
