@@ -1,5 +1,5 @@
 import { usePageParallax, useParallax } from "@/utils/hooks"
-import { Box, BoxProps } from "@chakra-ui/react"
+import { Box, BoxProps, Center } from "@chakra-ui/react"
 import { motion, MotionValue, useScroll } from "framer-motion"
 import { memo } from "react"
 
@@ -23,9 +23,8 @@ const Frame = ({
   ref,
   ...rest
 }: FrameProps) => {
-  const offset = 0
   return (
-    <Box
+    <Center
       as={motion.div}
       transform={`translateY(${y}px)`}
       bg={bg}
@@ -38,20 +37,36 @@ const Frame = ({
       style={{ y }}
     >
       {children}
-    </Box>
+    </Center>
   )
 }
 
-/* type TinyFrameProps = Partial<BoxProps> | { parallaxDistance?: number; children: React.ReactNode }
+type TinyFrameProps = Partial<FrameProps>
 
 export const TinyFrame = (props: TinyFrameProps) => {
-  const { parallaxDistance = 0, children, rest } = props
-  const y = usePageParallax(parallaxDistance)
+  const { children, bg = "white", ...rest } = props
   return (
-    <Frame w="4rem" h="6rem" shadow="lg" bg="white" position="absolute" y={y} {...rest}>
+    <Frame w="4rem" h="6rem" shadow="lg" bg={bg} {...rest}>
       {children}
     </Frame>
   )
 }
- */
+
+export const ShadowFrame = (props: TinyFrameProps) => {
+  const { children, bg = "cucumber.50", ...rest } = props
+  return (
+    <Frame
+      w="4.5rem"
+      h="6rem"
+      shadow="none"
+      border="1px solid"
+      borderColor="cucumber.200"
+      bg={bg}
+      {...rest}
+    >
+      {children}
+    </Frame>
+  )
+}
+
 export default Frame

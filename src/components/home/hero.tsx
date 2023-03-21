@@ -11,6 +11,7 @@ import {
 import HeroGallery from "./hero-gallery"
 import { usePageParallax, useParallax } from "@/utils/hooks"
 import fonts from "@/utils/fonts"
+import { H3 } from "@/core/components/typography"
 
 const MBox = motion(Box)
 const HeroBtn = ({ icon, text }) => {
@@ -73,14 +74,9 @@ const Hero = () => {
         />
         {/* A parallax indicator */}
         {/* <MBox bg="red" h="8" w="8" position="fixed" top="0" style={{ y }}></MBox> */}
-        <Text
-          as={motion.p}
-          variants={staggerChildVariants}
-          fontSize="5xl"
-          className={fonts.heptaSlab.className}
-        >
+        <H3 as={motion.p} variants={staggerChildVariants}>
           Empowering Frontend Teams, Scaling Success
-        </Text>
+        </H3>
         <Text as={motion.p} variants={staggerChildVariants} fontSize="xl">
           Leveraging AI and Web Innovations to Drive Success - Open to Full/Part-Time Positions
         </Text>

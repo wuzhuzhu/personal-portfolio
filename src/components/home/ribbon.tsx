@@ -4,28 +4,9 @@ import { chakra, Box, HStack, Text, Center } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import React from "react"
 import Marquee from "react-fast-marquee"
+import { SKILLS } from "@/utils/constants"
 
 const CMarquee = chakra(Marquee)
-
-const SKILLS = [
-  "React",
-  "Node",
-  "Next",
-  "Web3",
-  "OpenAI",
-  "TypeScript",
-  "Chakra UI",
-  "Tailwind CSS",
-  "Framer Motion",
-  "Prisma",
-  "PostgreSQL",
-  "MongoDB",
-  "GraphQL",
-  "Blitz",
-  "Docker",
-  "AWS",
-  "Vercel",
-]
 
 export const RibbonItem = ({ text }: { text: String }) => {
   return (

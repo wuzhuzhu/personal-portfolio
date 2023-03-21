@@ -1,7 +1,8 @@
+import { H1, H2 } from "@/core/components/typography"
 import fonts from "@/utils/fonts"
-import { Heading, VStack, Text, Container, HStack } from "@chakra-ui/react"
+import { Heading, VStack, Text, Container, HStack, Image } from "@chakra-ui/react"
 import React from "react"
-import Frame from "./frame"
+import Frame, { ShadowFrame } from "./frame"
 
 const careerCards = [
   {
@@ -34,13 +35,18 @@ const careerCards = [
 const ImmersionScroll = () => {
   return (
     <VStack align="flex-start" spacing="10">
-      <Text className={fonts.heptaSlab.className} fontSize="85px" maxW="65%">
-        Passionate Tech Expert
-      </Text>
+      <H1 maxW="65%">Passionate</H1>
+      <HStack spacing="4">
+        <ShadowFrame>
+          <Image src="/images/waving.png"></Image>
+        </ShadowFrame>
+        <H1>Tech Expert</H1>
+      </HStack>
+
       <HStack maxW="80%" spacing="8" align="flex-start">
         <Frame w="260px"></Frame>
         <Container>
-          <Text>
+          <Text fontSize="lg">
             A talented professional with exceptional skills in team management, full-stack
             development, and frontend design. By embracing innovation and driving technological
             advancements, this individual has made significant contributions to leading companies in

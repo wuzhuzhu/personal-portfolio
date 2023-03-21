@@ -46,7 +46,7 @@ const Card = ({ title, description, i, scrollYProgress, ref }: CardProps) => {
       w="100vw"
       h="100vh"
       py="12"
-      px="6"
+      px="16"
       zIndex={i}
       // @ts-ignore mixed type
       style={{ scale, transformOrigin: "top center" }}

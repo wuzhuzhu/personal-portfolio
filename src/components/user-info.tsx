@@ -12,6 +12,9 @@ import { ChevronDownIcon } from "@chakra-ui/icons"
  * You can delete everything in here and start from scratch if you like.
  */
 
+// TODO: stagger menu by framer motion:
+// https://codesandbox.io/s/framer-motion-variants-rj7ks0?from-embed=&file=/src/App.tsx
+
 const UserInfo = () => {
   const currentUser = useCurrentUser()
   const [logoutMutation] = useMutation(logout)
