@@ -11,17 +11,17 @@ export function assert(
 export const setDefaultOrganizationId = <T extends Record<any, any>>(
   input: T,
   { session }: Ctx
-): T & { organizationId: Prisma.IntNullableFilter | number } => {
+): T & { organizationId: Prisma.NestedStringNullableFilter | string } => {
   assert(
     session.orgId,
     "Missing session.orgId in setDefaultOrganizationId"
   )
   if (input.organizationId) {
     // Pass through the input
-    return input as T & { organizationId: number }
+    return input as T & { organizationId: string }
   } else if (session.roles?.includes(GlobalRole.SUPERADMIN)) {
     // Allow viewing any organization
-    return { ...input, organizationId: { not: 0 } }
+    return { ...input, organizationId: { not: '' } }
   } else {
     // Set organizationId to session.orgId
     return { ...input, organizationId: session.orgId }
