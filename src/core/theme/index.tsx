@@ -1,4 +1,5 @@
 import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react"
+import { menuTheme } from "./components/menu"
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
@@ -60,6 +61,7 @@ const components = {
       fontWeight: "semibold", // defaults to "semibold", not changing
     },
   },
+  Menu: menuTheme,
 }
 
 // 3. extend the theme

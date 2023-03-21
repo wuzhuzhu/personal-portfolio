@@ -1,14 +1,12 @@
 import {
-  Box,
   Button,
   Center,
   HStack,
   Image,
-  VStack,
   Text,
   Flex,
-  Heading,
-  chakra,
+  Menu,
+  MenuButton,
   shouldForwardProp,
 } from "@chakra-ui/react"
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons"
@@ -55,13 +53,13 @@ const Header = () => {
         <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
           Contact
         </Button>
+        <Suspense fallback="Loading">
+          <UserInfo />
+        </Suspense>
         <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
           En
           <ChevronDownIcon />
         </Button>
-        <Suspense fallback="Loading">
-          <UserInfo />
-        </Suspense>
       </HStack>
       <Center w="150px" h="55" role="group" position="relative">
         <Image
