@@ -31,6 +31,7 @@
     "@chakra-ui/react": "2.5.1",
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
+    "@next/font": "~13.1",
     "@prisma/client": "4.10.1",
     "blitz": "2.0.0-beta.23",
     "final-form": "4.20.9",
