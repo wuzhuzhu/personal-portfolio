@@ -11,7 +11,6 @@ const baseStyle = definePartsStyle({
     // this will style the MenuList component
     py: "2",
     borderRadius: "lg",
-    border: "none",
     bg: "purple.50",
     w: "3",
   },
