@@ -1,17 +1,14 @@
-import { Routes } from "@blitzjs/next";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useMutation } from "@blitzjs/rpc";
-import Layout from "src/core/layouts/Layout";
-import createQuestion from "src/questions/mutations/createQuestion";
-import {
-  QuestionForm,
-  FORM_ERROR,
-} from "src/questions/components/QuestionForm";
+import { Routes } from "@blitzjs/next"
+import Link from "next/link"
+import { useRouter } from "next/router"
+import { useMutation } from "@blitzjs/rpc"
+import Layout from "@/components/layout"
+import createQuestion from "src/questions/mutations/createQuestion"
+import { QuestionForm, FORM_ERROR } from "src/questions/components/QuestionForm"
 
 const NewQuestionPage = () => {
-  const router = useRouter();
-  const [createQuestionMutation] = useMutation(createQuestion);
+  const router = useRouter()
+  const [createQuestionMutation] = useMutation(createQuestion)
 
   return (
     <Layout title={"Create New Question"}>
@@ -26,15 +23,13 @@ const NewQuestionPage = () => {
         // initialValues={{}}
         onSubmit={async (values) => {
           try {
-            const question = await createQuestionMutation(values);
-            await router.push(
-              Routes.ShowQuestionPage({ questionId: question.id })
-            );
+            const question = await createQuestionMutation(values)
+            await router.push(Routes.ShowQuestionPage({ questionId: question.id }))
           } catch (error: any) {
-            console.error(error);
+            console.error(error)
             return {
               [FORM_ERROR]: error.toString(),
-            };
+            }
           }
         }}
       />
@@ -43,9 +38,9 @@ const NewQuestionPage = () => {
         <Link href={Routes.QuestionsPage()}>Questions</Link>
       </p>
     </Layout>
-  );
-};
+  )
+}
 
-NewQuestionPage.authenticate = true;
+NewQuestionPage.authenticate = true
 
-export default NewQuestionPage;
+export default NewQuestionPage

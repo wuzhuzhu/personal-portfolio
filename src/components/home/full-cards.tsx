@@ -27,10 +27,9 @@ type CardProps = {
   title: string
   description: string
   i: number
-  ref: React.RefObject<HTMLDivElement>
   scrollYProgress: MotionValue<number>
 }
-const Card = ({ title, description, i, scrollYProgress, ref }: CardProps) => {
+const Card = ({ title, description, i, scrollYProgress }: CardProps) => {
   const yInputOffset = [(i + 1) * (1 / 3), (i + 3) * (1 / 3)]
   const yInput = [i * (1 / 3), (i + 1) * (1 / 3)]
   const scale = useTransform(scrollYProgress, yInputOffset, [1, 0.9])
@@ -98,7 +97,7 @@ const FullCards = () => {
   return (
     <VStack as={motion.div} ref={cardsRef} position="relative">
       {cards.map((card, i) => (
-        <Card {...card} i={i} ref={cardsRef} key={`card-${i}`} scrollYProgress={scrollYProgress} />
+        <Card {...card} i={i} key={`card-${i}`} scrollYProgress={scrollYProgress} />
       ))}
     </VStack>
   )

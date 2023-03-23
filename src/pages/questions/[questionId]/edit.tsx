@@ -6,7 +6,7 @@ import { useRouter } from "next/router"
 import { useQuery, useMutation } from "@blitzjs/rpc"
 import { useParam } from "@blitzjs/next"
 
-import Layout from "@/core/layouts/Layout"
+import Layout from "@/components/layout"
 import getQuestion from "@/questions/queries/getQuestion"
 import updateQuestion from "@/questions/mutations/updateQuestion"
 import { QuestionForm, FORM_ERROR } from "@/questions/components/QuestionForm"

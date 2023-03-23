@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import Layout from "src/core/layouts/Layout"
+import Layout from "@/components/layout"
 import { useCurrentUser } from "src/users/hooks/useCurrentUser"
 import logout from "src/auth/mutations/logout"
 import { useMutation } from "@blitzjs/rpc"
