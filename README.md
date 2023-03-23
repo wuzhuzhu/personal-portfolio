@@ -1,15 +1,12 @@
-[![Blitz.js](https://raw.githubusercontent.com/blitz-js/art/master/github-cover-photo.png)](https://blitzjs.com)
 
-This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
-
-# ****name****
+# ****Walter Personal Portfolio****
 
 ## Getting Started
 
 Run your app in the development mode.
 
 ```
-blitz dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -40,23 +37,25 @@ Blitz comes with a test setup using [Vitest](https://vitest.dev/) and [react-tes
 
 ## Commands
 
-Blitz comes with a powerful CLI that is designed to make development easy and fast. You can install it with `npm i -g blitz`
+Run npm scripts with:
 
 ```
-  blitz [COMMAND]
-
   dev       Start a development server
   build     Create a production build
   start     Start a production server
-  export    Export your Blitz app as a static application
+  migrate   Apply schema changes into current DB
+  db-push   [!]Push DB changes into current DATABASE
+  studio    run prisma studio check db lines
+```
+see also blitz cmds:
+```
+  export    Export this web app as a static application
   prisma    Run prisma commands
-  generate  Generate new files for your Blitz project
+  generate  Generate new files for your Blitz project(no data-proxy)
   console   Run the Blitz console REPL
-  install   Install a recipe
   help      Display help for blitz
   test      Run project tests
 ```
-
 You can read more about it on the [CLI Overview](https://blitzjs.com/docs/cli-overview) documentation.
 
 ## What's included?
@@ -88,10 +87,9 @@ interview-run
 │   │   └── validations.ts
 │   ├── core/
 │   │   ├── components/
-│   │   │   ├── Form.tsx
-│   │   │   └── LabeledTextField.tsx
-│   │   └── layouts/
-│   │       └── Layout.tsx
+│   │   │   ├── components/
+│   │   │   └── Index.tsx
+│   │   └── Index.tsx
 │   ├── pages/
 │   │   ├── _app.tsx
 │   │   ├── _document.tsx
@@ -130,23 +128,14 @@ interview-run
 These files are:
 
 - The `src/` folder is a container for most of your project. This is where you’ll put any pages or API routes.
-
 - `db/` is where your database configuration goes. If you’re writing models or checking migrations, this is where to go.
-
 - `public/` is a folder where you will put any static assets. If you have images, files, or videos which you want to use in your app, this is where to put them.
-
 - `integrations/` is a folder to put all third-party integrations like with Stripe, Sentry, etc.
-
 - `test/` is a folder where you can put test utilities and integration tests.
-
 - `package.json` contains information about your dependencies and devDependencies. If you’re using a tool like `npm` or `yarn`, you won’t have to worry about this much.
-
 - `tsconfig.json` is our recommended setup for TypeScript.
-
 - `.babel.config.js`, `.eslintrc.js`, `.env`, etc. ("dotfiles") are configuration files for various bits of JavaScript tooling.
-
 - `blitz.config.ts` is for advanced custom configuration of Blitz. [Here you can learn how to use it](https://blitzjs.com/docs/blitz-config).
-
 - `vitest.config.ts` contains config for Vitest tests. You can [customize it if needed](https://vitejs.dev/config/).
 
 You can read more about it in the [File Structure](https://blitzjs.com/docs/file-structure) section of the documentation.
