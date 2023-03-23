@@ -22,7 +22,7 @@ const Ribbon = () => {
   const y = usePageParallax(-300)
   return (
     <HStack
-      w="100vw"
+      w="94vw"
       spacing="1"
       overflowX="hidden"
       as={motion.div}

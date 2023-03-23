@@ -9,6 +9,7 @@ import Education from "@/components/home/education"
 import { gSP, gSSP } from "@/blitz-server"
 import { Routes } from "@blitzjs/next"
 import getCurrentUser from "@/users/queries/getCurrentUser"
+import Footer from "@/components/home/footer"
 
 const Home: BlitzPage = () => {
   return (
@@ -17,7 +18,8 @@ const Home: BlitzPage = () => {
       <Ribbon />
       <FullCards />
       <ImmersionScroll />
-      <Education></Education>
+      <Education />
+      <Footer />
     </VStack>
   )
 }

@@ -72,7 +72,7 @@ const theme = extendTheme(
   },
   withDefaultColorScheme({
     colorScheme: "cucumber",
-    components: ["Button"],
+    components: ["Button", "IconButton"],
   }),
   withDefaultColorScheme({
     colorScheme: "steelGray",

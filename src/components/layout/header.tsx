@@ -19,7 +19,7 @@ import fonts from "@/utils/fonts"
 import HeaderItemLoading from "@/components/loading/header-item-loading"
 import UserInfo from "../user-info"
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <Flex direction="row" mr="4">
       <Image src="/images/logo.svg" alt="logo" w="40" ml="-7" />
