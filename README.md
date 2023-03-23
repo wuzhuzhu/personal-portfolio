@@ -11,6 +11,20 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Todo
+- [ ] Responsive design - mobile
+- [ ] Animation
+- [ ] 3D effects
+- [ ] E2E Testing
+- [ ] Dark Model
+- [ ] Performance statistics & optimization
+
+- [ ] Dynamic content from server-side(Static Props/Server Props)
+- [ ] Mailer, 3rd party auth integration
+
+- [ ] Prisma data-proxy
+- [ ] Edge function
+
 ## Environment Variables
 
 Ensure the `.env.local` file has required environment variables:
@@ -79,11 +93,6 @@ interview-run
 │   │   │   ├── resetPassword.test.ts
 │   │   │   ├── resetPassword.ts
 │   │   │   └── signup.ts
-│   │   ├── pages/
-│   │   │   ├── forgot-password.tsx
-│   │   │   ├── login.tsx
-│   │   │   ├── reset-password.tsx
-│   │   │   └── signup.tsx
 │   │   └── validations.ts
 │   ├── core/
 │   │   ├── components/
@@ -91,6 +100,11 @@ interview-run
 │   │   │   └── Index.tsx
 │   │   └── Index.tsx
 │   ├── pages/
+│   │   ├── auth/
+│   │   │   ├── forgot-password.tsx
+│   │   │   ├── login.tsx
+│   │   │   ├── reset-password.tsx
+│   │   │   └── signup.tsx
 │   │   ├── _app.tsx
 │   │   ├── _document.tsx
 │   │   ├── 404.tsx
@@ -139,24 +153,3 @@ These files are:
 - `vitest.config.ts` contains config for Vitest tests. You can [customize it if needed](https://vitejs.dev/config/).
 
 You can read more about it in the [File Structure](https://blitzjs.com/docs/file-structure) section of the documentation.
-
-### Tools included
-
-Blitz comes with a set of tools that corrects and formats your code, facilitating its future maintenance. You can modify their options and even uninstall them.
-
-- **ESLint**: It lints your code: searches for bad practices and tell you about it. You can customize it via the `.eslintrc.js`, and you can install (or even write) plugins to have it the way you like it. It already comes with the [`blitz`](https://github.com/blitz-js/blitz/tree/canary/packages/eslint-config) config, but you can remove it safely. [Learn More](https://blitzjs.com/docs/eslint-config).
-- **Husky**: It adds [githooks](https://git-scm.com/docs/githooks), little pieces of code that get executed when certain Git events are triggerd. For example, `pre-commit` is triggered just before a commit is created. You can see the current hooks inside `.husky/`. If are having problems commiting and pushing, check out ther [troubleshooting](https://typicode.github.io/husky/#/?id=troubleshoot) guide. [Learn More](https://blitzjs.com/docs/husky-config).
-- **Prettier**: It formats your code to look the same everywhere. You can configure it via the `.prettierrc` file. The `.prettierignore` contains the files that should be ignored by Prettier; useful when you have large files or when you want to keep a custom formatting. [Learn More](https://blitzjs.com/docs/prettier-config).
-
-## Learn more
-
-Read the [Blitz.js Documentation](https://blitzjs.com/docs/getting-started) to learn more.
-
-The Blitz community is warm, safe, diverse, inclusive, and fun! Feel free to reach out to us in any of our communication channels.
-
-- [Website](https://blitzjs.com)
-- [Discord](https://blitzjs.com/discord)
-- [Report an issue](https://github.com/blitz-js/blitz/issues/new/choose)
-- [Forum discussions](https://github.com/blitz-js/blitz/discussions)
-- [How to Contribute](https://blitzjs.com/docs/contributing)
-- [Sponsor or donate](https://github.com/blitz-js/blitz#sponsors-and-donations)
