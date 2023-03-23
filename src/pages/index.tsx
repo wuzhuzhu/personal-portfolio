@@ -10,8 +10,7 @@ import { gSP, gSSP } from "@/blitz-server"
 import { Routes } from "@blitzjs/next"
 import getCurrentUser from "@/users/queries/getCurrentUser"
 
-const Home: BlitzPage = ({ data }) => {
-  console.log("user", data)
+const Home: BlitzPage = () => {
   return (
     <VStack w="full" spacing="100px">
       <Hero />
