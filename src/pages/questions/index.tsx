@@ -4,7 +4,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { usePaginatedQuery } from "@blitzjs/rpc"
 import { useRouter } from "next/router"
-import Layout from "src/core/layouts/Layout"
+import Layout from "@/components/layout"
 import getQuestions from "src/questions/queries/getQuestions"
 
 const ITEMS_PER_PAGE = 100

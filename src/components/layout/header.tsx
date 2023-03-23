@@ -15,12 +15,8 @@ import { headerButtonVariants, scrollHeaderVariants } from "@/utils/framer-varia
 import { Suspense, useEffect, useState } from "react"
 import { useHeaderHidden } from "@/utils/hooks"
 import fonts from "@/utils/fonts"
-import { useCurrentUser } from "@/users/hooks/useCurrentUser"
-import { useMutation } from "@blitzjs/rpc"
-import logout from "@/auth/mutations/logout"
-import { useSession } from "@blitzjs/auth"
-import dynamic from "next/dynamic"
 
+import HeaderItemLoading from "@/components/loading/header-item-loading"
 import UserInfo from "../user-info"
 
 const Logo = () => {
@@ -48,18 +44,18 @@ const Header = () => {
       <HStack spacing="8">
         <Logo />
         <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
+          En
+          <ChevronDownIcon />
+        </Button>
+        <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
           Blog
         </Button>
         <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
           Contact
         </Button>
-        <Suspense fallback="Loading">
+        <Suspense fallback={<HeaderItemLoading />}>
           <UserInfo />
         </Suspense>
-        <Button variant="ghost" colorScheme="steelGray" color="steelGray.800">
-          En
-          <ChevronDownIcon />
-        </Button>
       </HStack>
       <Center w="150px" h="55" role="group" position="relative">
         <Image

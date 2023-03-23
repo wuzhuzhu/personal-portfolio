@@ -12,7 +12,7 @@ const Layout = ({ children, title }: LayoutProps) => {
   return (
     <>
       <Head>
-        <title>{title || "Walter Wu | Fullstack|Frontend|Engineering Management"}</title>
+        <title>{title || "Walter Wu | Fullstack | Frontend | Engineering Management"}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
