@@ -38,7 +38,7 @@ const ImmersionScroll = () => {
       <H1 maxW="65%">Passionate</H1>
       <HStack spacing="4">
         <ShadowFrame>
-          <Image src="/images/waving.png"></Image>
+          <Image src="/images/waving.png" alt="waving"></Image>
         </ShadowFrame>
         <H1>Tech Expert</H1>
       </HStack>

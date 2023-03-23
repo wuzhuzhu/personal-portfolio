@@ -7,7 +7,7 @@ import { Logo } from "../layout/header"
 export const ExternalLink = () => {
   return (
     <VStack spacing="4" align="flex-start">
-      <Text fontSize="xl">slakdfjl</Text>
+      <Text fontSize="xl">Category</Text>
       <Link fontSize="xl" color="steelGray.500">
         test
       </Link>
@@ -52,7 +52,7 @@ const Footer = () => {
               </Wrap>
             </VStack>
 
-            <HStack spacing="4">
+            <HStack spacing="12">
               <ExternalLink></ExternalLink>
               <ExternalLink></ExternalLink>
               <ExternalLink></ExternalLink>
