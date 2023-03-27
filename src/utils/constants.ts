@@ -5,6 +5,7 @@ export const SKILLS = [
   "Web3",
   "OpenAI",
   "TypeScript",
+  "Midjourney",
   "Chakra UI",
   "Tailwind CSS",
   "Framer Motion",

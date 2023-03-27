@@ -10,9 +10,9 @@ import { SKILLS } from "@/utils/constants"
 const Education = () => {
   const educationRef = React.useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: educationRef, offset: ["0 1", "1 0"] })
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  /*   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     console.log("Page scroll: ", latest)
-  })
+  }) */
 
   const y1 = useParallax(scrollYProgress, -500)
   const y2 = useParallax(scrollYProgress, -700)
