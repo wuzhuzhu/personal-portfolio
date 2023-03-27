@@ -1,18 +1,18 @@
 {
   "schema_version": "v1",
-  "name_for_human": "TODO Plugin",
-  "name_for_model": "todo",
-  "description_for_human": "Plugin for managing a TODO list. You can add, remove and view your TODOs.",
-  "description_for_model": "Plugin for managing a TODO list. You can add, remove and view your TODOs.",
+  "name_for_human": "Walter Simple Questions",
+  "name_for_model": "question",
+  "description_for_human": "Plugin for view all questions and answers.",
+  "description_for_model": "Plugin for view all questions and answers, just a question list.",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "http://localhost:3333/openapi.yaml",
+    "url": "PLUGIN_HOSTNAME/openapi.yaml",
     "is_user_authenticated": false
   },
-  "logo_url": "http://localhost:3333/logo.png",
-  "contact_email": "support@example.com",
-  "legal_info_url": "http://www.example.com/legal"
+  "logo_url": "https://i.interview.run/images/logo.svg",
+  "contact_email": "w@interview.run",
+  "legal_info_url": "http://i.interview.run/other/legal"
 }
