@@ -16,9 +16,9 @@ const Layout = ({ children, title }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box bg="cucumber.50">
+      <Box bg="white" w="100vw" h="100vh">
         <Header />
-        <Container minH="full" w="full" maxW="container.xl">
+        <Container minH="full" w="100vw" maxW="container.xl">
           <VStack backgroundColor="cucumber.50" h="full" w="full" spacing={20} py={8}>
             {children}
           </VStack>
