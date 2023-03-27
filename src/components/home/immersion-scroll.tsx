@@ -1,6 +1,6 @@
 import { H1, H2 } from "@/core/components/typography"
 import fonts from "@/utils/fonts"
-import { Heading, VStack, Text, Container, HStack, Image } from "@chakra-ui/react"
+import { Heading, VStack, Text, Container, HStack, Image, Box } from "@chakra-ui/react"
 import React from "react"
 import Frame, { ShadowFrame } from "./frame"
 
@@ -54,7 +54,9 @@ const ImmersionScroll = () => {
           </Text>
         </Container>
       </HStack>
-      <CareerCards></CareerCards>
+      <Box maxW="400px" overflowX="scroll">
+        <CareerCards></CareerCards>
+      </Box>
     </VStack>
   )
 }
@@ -72,7 +74,7 @@ const CareerCard = ({ title, description }) => {
 
 const CareerCards = () => {
   return (
-    <HStack w="600px" overflowX="scroll" overflowY="hidden" scrollSnapType="x mandatory">
+    <HStack overflowX="scroll" overflowY="hidden" scrollSnapType="x mandatory">
       {careerCards.map((card, i) => (
         <CareerCard key={`c-card-${i}`} {...card}></CareerCard>
       ))}

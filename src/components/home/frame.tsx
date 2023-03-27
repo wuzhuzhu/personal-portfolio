@@ -1,9 +1,9 @@
 import { usePageParallax, useParallax } from "@/utils/hooks"
-import { Box, BoxProps, Center } from "@chakra-ui/react"
+import { Box, BoxProps, Center, CenterProps } from "@chakra-ui/react"
 import { motion, MotionValue, useScroll } from "framer-motion"
 import { memo } from "react"
 
-type FrameProps = BoxProps & {
+type FrameProps = CenterProps & {
   parallaxDistance?: number
   children?: React.ReactNode
   y?: number
@@ -15,8 +15,8 @@ const Frame = ({
   bg = "steelGray.800",
   y = 0,
   shadow = "none",
-  h = "80",
-  w = "200px",
+  // h = "80",
+  // w = "200px",
   parallaxDistance,
   scrollYProgress,
   children,
@@ -29,8 +29,6 @@ const Frame = ({
       transform={`translateY(${y}px)`}
       bg={bg}
       boxShadow={shadow}
-      h={h}
-      w={w}
       borderRadius="full"
       {...rest}
       // @ts-ignore

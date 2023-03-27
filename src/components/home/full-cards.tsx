@@ -84,7 +84,7 @@ const Card = ({ title, description, i, scrollYProgress }: CardProps) => {
           </Box>
         </VStack>
         <Center flex={1}>
-          <Frame h="500px" w="350px"></Frame>
+          <Frame h={["200px", "400px", "500px"]} w={["120px", "200px", "350px"]}></Frame>
         </Center>
       </HStack>
     </Center>
@@ -95,7 +95,7 @@ const FullCards = () => {
   const cardsRef = useRef(null)
   const { scrollYProgress } = useScroll({ target: cardsRef, offset: ["start end", "end"] })
   return (
-    <VStack as={motion.div} ref={cardsRef} position="relative">
+    <VStack as={motion.div} ref={cardsRef} position="relative" mx="-4">
       {cards.map((card, i) => (
         <Card {...card} i={i} key={`card-${i}`} scrollYProgress={scrollYProgress} />
       ))}

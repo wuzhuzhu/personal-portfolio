@@ -18,3 +18,5 @@ export const SKILLS = [
   "AWS",
   "Vercel",
 ]
+
+

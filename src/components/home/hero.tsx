@@ -1,5 +1,5 @@
 import React, { memo } from "react"
-import { Icon, Button, HStack, Text, VStack, Image, Box } from "@chakra-ui/react"
+import { Icon, Button, HStack, Text, VStack, Image, Box, Center } from "@chakra-ui/react"
 import { GrApple, GrAndroid } from "react-icons/gr"
 import { motion, useScroll, useTransform } from "framer-motion"
 
@@ -12,6 +12,7 @@ import HeroGallery from "./hero-gallery"
 import { usePageParallax, useParallax } from "@/utils/hooks"
 import fonts from "@/utils/fonts"
 import { H3 } from "@/core/components/typography"
+import { pagePaddingW } from "@/core/theme"
 
 const MBox = motion(Box)
 const HeroBtn = ({ icon, text }) => {
@@ -43,13 +44,23 @@ const Hero = () => {
   const y = usePageParallax(500)
 
   return (
-    <HStack position="relative">
+    <Center
+      px={[4, 8, 20, "120px"]}
+      // bg="green"
+      w="full"
+      maxW={[null, null, null, null, "80%"]}
+      position="relative"
+      display={{ base: "auto", lg: "flex" }}
+      flexDir="row-reverse"
+    >
+      <HeroGallery />
       <VStack
+        mt={{ base: 20, md: 0 }}
         as={motion.div}
         display="flex"
         flexDir="column"
         align="flex-start"
-        flex="1"
+        flex={1}
         spacing={8}
         initial="hidden"
         animate="visible"
@@ -77,7 +88,11 @@ const Hero = () => {
         <H3 as={motion.p} variants={staggerChildVariants}>
           Empowering Frontend Teams, Scaling Success
         </H3>
-        <Text as={motion.p} variants={staggerChildVariants} fontSize="xl">
+        <Text
+          as={motion.p}
+          variants={staggerChildVariants}
+          fontSize={["md", null, "xl", null, "2xl"]}
+        >
           Leveraging AI and Web Innovations to Drive Success - Open to Full/Part-Time Positions
         </Text>
         <HStack as={motion.div} variants={staggerChildVariants} spacing={4}>
@@ -85,8 +100,7 @@ const Hero = () => {
           <HeroBtn icon={GrAndroid} text="Google Play"></HeroBtn>
         </HStack>
       </VStack>
-      <HeroGallery />
-    </HStack>
+    </Center>
   )
 }
 

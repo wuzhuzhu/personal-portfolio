@@ -16,13 +16,13 @@ const Layout = ({ children, title }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box bg="cucumber.50">
+      <Box bg="cucumber.50" w="100vw" overflowX="clip">
         <Header />
-        <Container minH="full" w="full" maxW="container.xl">
+        <Box minH="full" w="full">
           <VStack backgroundColor="cucumber.50" h="full" w="full" spacing={20} py={8}>
             {children}
           </VStack>
-        </Container>
+        </Box>
       </Box>
     </>
   )

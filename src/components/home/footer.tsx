@@ -3,6 +3,7 @@ import { Box, HStack, VStack, Image, Text, IconButton, Wrap, Link } from "@chakr
 import { FaLinkedinIn, FaGithub } from "react-icons/fa"
 import React from "react"
 import { Logo } from "../layout/header"
+import { pagePaddingW } from "@/core/theme"
 
 export const ExternalLink = () => {
   return (
@@ -25,7 +26,7 @@ export const ExternalLink = () => {
 const Footer = () => {
   const siteName = process.env.NEXT_PUBLIC_SITE_NAME
   return (
-    <Box my="25" w="full">
+    <Box my="25" w="full" px={pagePaddingW}>
       <VStack spacing="12">
         <HStack w="full">
           <HStack w="full" justify="space-between" align="flex-start">

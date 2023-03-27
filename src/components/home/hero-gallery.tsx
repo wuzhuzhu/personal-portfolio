@@ -9,13 +9,23 @@ const HeroGallery = () => {
   const y1 = usePageParallax(-500)
   const y2 = usePageParallax(-800)
   return (
-    <HStack spacing="2" flex={1} justify="center">
+    <HStack spacing="-4" flex={1} justify="center">
       <motion.div style={{ y: y1 }}>
-        <Frame y={50} shadow="xl"></Frame>
+        <Frame
+          y={-20}
+          shadow="xl"
+          w={{ base: "150px", lg: "200px" }}
+          h={{ base: "240px", lg: "320px" }}
+        ></Frame>
       </motion.div>
 
       <motion.div style={{ y: y2 }}>
-        <Frame y={20} shadow="5xl"></Frame>
+        <Frame
+          y={60}
+          shadow="3xl"
+          w={{ base: "150px", lg: "200px" }}
+          h={{ base: "240px", lg: "320px" }}
+        ></Frame>
       </motion.div>
     </HStack>
   )

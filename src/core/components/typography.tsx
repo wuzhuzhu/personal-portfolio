@@ -15,7 +15,7 @@ export const H2 = ({ children, ...rest }) => (
 )
 
 export const H3 = ({ children, ...rest }) => (
-  <Text className={fonts.heptaSlab.className} fontSize="5xl">
+  <Text className={fonts.heptaSlab.className} fontSize={["3xl", null, "4xl", "5xl", "6xl"]}>
     {children}
   </Text>
 )
