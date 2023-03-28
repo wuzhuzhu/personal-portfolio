@@ -72,7 +72,7 @@ const ImmersionScroll = () => {
           ></Frame>
         </Box>
         <Box>
-          <Text fontSize="lg">
+          <Text fontSize="lg" textAlign="left">
             A talented professional with exceptional skills in team management, full-stack
             development, and frontend design. By embracing innovation and driving technological
             advancements, this individual has made significant contributions to leading companies in
