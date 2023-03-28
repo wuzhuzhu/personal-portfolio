@@ -1,7 +1,17 @@
 import { H1, H2, H6 } from "@/core/components/typography"
 import { pagePaddingW } from "@/core/theme"
 import fonts from "@/utils/fonts"
-import { Heading, VStack, Text, Container, HStack, Image, Box, Center } from "@chakra-ui/react"
+import {
+  Heading,
+  VStack,
+  Text,
+  Container,
+  HStack,
+  Image,
+  Box,
+  Center,
+  Flex,
+} from "@chakra-ui/react"
 import React from "react"
 import Frame, { ShadowFrame } from "./frame"
 
@@ -46,23 +56,29 @@ const ImmersionScroll = () => {
 
       <Box
         display={["block", null, "flex"]}
+        flexDir={["column", null, "row"]}
         style={{ alignItems: "flex-start" }}
+        textAlign="center"
         mt={[8, null, 12, 16]}
       >
-        <Frame
-          w={["200px", null, "300px"]}
-          h={["280px", null, "360px"]}
-          mr={[0, 0, 5, 10]}
-          mb={[5, null, 0]}
-        ></Frame>
-        <Container>
-          <Text fontSize="lg" flex={[0, 0, 2]}>
+        <Box>
+          <Frame
+            display="inline-block"
+            w={["320px", null, "400px"]}
+            h={["280px", null, "480px"]}
+            flex={[0, 0, 1]}
+            mr={[0, 0, 5, 10]}
+            mb={[5, null, 0]}
+          ></Frame>
+        </Box>
+        <Box>
+          <Text fontSize="lg">
             A talented professional with exceptional skills in team management, full-stack
             development, and frontend design. By embracing innovation and driving technological
             advancements, this individual has made significant contributions to leading companies in
             the tech industry.
           </Text>
-        </Container>
+        </Box>
       </Box>
       <Box maxW="100%" overflowX="auto" mt={[8, null, 12, 16]}>
         <CareerCards></CareerCards>
