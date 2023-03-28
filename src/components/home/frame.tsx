@@ -54,8 +54,8 @@ export const ShadowFrame = (props: TinyFrameProps) => {
   const { children, bg = "cucumber.50", ...rest } = props
   return (
     <Frame
-      w="4.5rem"
-      h="6rem"
+      w={["2rem", null, "4rem", "4.5rem"]}
+      h={["3rem", null, "5rem", "6rem"]}
       shadow="none"
       border="1px solid"
       borderColor="cucumber.200"

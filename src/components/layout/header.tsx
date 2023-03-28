@@ -27,7 +27,7 @@ import HeaderItemLoading from "@/components/loading/header-item-loading"
 import UserInfo from "../user-info"
 import { pagePaddingW } from "@/core/theme"
 
-const smVariant = {
+const baseVariant = {
   navigation: "list",
   miniMenu: true,
   iconDisplay: "inline-block",
@@ -50,7 +50,7 @@ export const Logo = () => {
       <Image
         src="/images/logo.svg"
         alt="logo"
-        w={{ base: "28", md: "40" }}
+        w={{ base: "28", sm: "32", md: "40" }}
         ml={{ base: "-5", md: "-7" }}
       />
     </Flex>
@@ -58,7 +58,7 @@ export const Logo = () => {
 }
 
 export const MenuBtns = ({}) => {
-  const variants = useBreakpointValue({ base: smVariant, md: mdVariant })
+  const variants = useBreakpointValue({ base: baseVariant, md: mdVariant })
   return (
     <Flex direction={["column", "row"]} justify="flex-start">
       {variants?.showLogin && (
@@ -85,7 +85,7 @@ export const MenuBtns = ({}) => {
 const Header = () => {
   const [hidden, scrollHeaderVariants] = useHeaderHidden()
   const [menuClosed, setMenuStatus] = useBoolean()
-  const variants = useBreakpointValue({ base: smVariant, md: mdVariant })
+  const variants = useBreakpointValue({ base: baseVariant, md: mdVariant })
   return (
     <VStack
       bg="cucumber.50"
@@ -113,7 +113,7 @@ const Header = () => {
         </HStack>
         <Box onClick={setMenuStatus.toggle} display={variants?.iconDisplay}>
           <motion.div layout>
-            <Icon boxSize="6" as={menuClosed ? FiX : FiMenu}></Icon>
+            <Icon boxSize={[6, 8]} as={menuClosed ? FiX : FiMenu}></Icon>
           </motion.div>
         </Box>
         <Center w="150px" h="55" role="group" position="relative" display={variants?.hireDisplay}>

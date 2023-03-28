@@ -18,10 +18,10 @@ const MBox = motion(Box)
 const HeroBtn = ({ icon, text }) => {
   return (
     <Button
-      leftIcon={<Icon h="8" w="8" as={icon} />}
-      size="2xl"
+      leftIcon={<Icon h={[6, null, 8]} w={[6, null, 8]} as={icon} />}
+      size={["lg", null, "xl", "2xl"]}
       py="6"
-      px="12"
+      px={[8, null, 12]}
       borderRadius="full"
       bg="cucumber.150"
       color="steelGray.800"
@@ -30,11 +30,11 @@ const HeroBtn = ({ icon, text }) => {
         backgroundColor: "steelGray.700",
       }}
     >
-      <VStack justify="center" spacing={0} align="start" ml="2">
-        <Text color="steelGray.300" fontSize="sm">
+      <VStack justify="center" spacing={0} align="start">
+        <Text color="steelGray.300" fontSize={["xs", null, "sm"]}>
           Get on The
         </Text>
-        <Text>{text}</Text>
+        <Text fontSize={["sm", null, "md"]}>{text}</Text>
       </VStack>
     </Button>
   )
@@ -45,10 +45,10 @@ const Hero = () => {
 
   return (
     <Center
-      px={[4, null, 8, 20, "120px"]}
+      px={[4, null, 16, 20, "120px"]}
       // bg="green"
       w="full"
-      maxW={[null, null, null, null, "80%"]}
+      maxW={[null, null, null, null, "95%"]}
       position="relative"
       display={{ base: "auto", lg: "flex" }}
       flexDir="row-reverse"
