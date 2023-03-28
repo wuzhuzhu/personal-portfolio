@@ -6,6 +6,7 @@ import Frame, { TinyFrame } from "./frame"
 import { usePageParallax, useParallax } from "@/utils/hooks"
 import { H1, H2 } from "@/core/components/typography"
 import { SKILLS } from "@/utils/constants"
+import { pagePaddingW } from "@/core/theme"
 
 const Education = () => {
   const educationRef = React.useRef<HTMLDivElement>(null)
@@ -17,7 +18,7 @@ const Education = () => {
   const y1 = useParallax(scrollYProgress, -500)
   const y2 = useParallax(scrollYProgress, -700)
   return (
-    <VStack width="100%" spacing="32" justify="center">
+    <VStack width="100%" spacing="32" justify="center" px={pagePaddingW}>
       <VStack width="100%" align="flex-end" spacing="20" ref={educationRef}>
         <Box>
           <Container textAlign="right">

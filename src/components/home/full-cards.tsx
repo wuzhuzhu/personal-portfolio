@@ -1,5 +1,6 @@
+import { pagePaddingW } from "@/core/theme"
 import fonts from "@/utils/fonts"
-import { Box, Center, VStack, Text, HStack } from "@chakra-ui/react"
+import { Box, Center, VStack, Text, HStack, useBreakpointValue, Flex } from "@chakra-ui/react"
 import { motion, MotionValue, useInView, useScroll, useSpring, useTransform } from "framer-motion"
 import React, { useRef } from "react"
 
@@ -23,6 +24,23 @@ const cards = [
   },
 ]
 
+const baseVariant = {
+  navigation: "list",
+  miniMenu: true,
+  iconDisplay: "inline-block",
+  hireDisplay: "none",
+  wrapperPosition: "fixed",
+  showLogin: false,
+}
+const mdVariant = {
+  navigation: "menu",
+  miniMenu: false,
+  iconDisplay: "none",
+  hireDisplay: "flex",
+  wrapperPosition: "relative",
+  showLogin: true,
+}
+
 type CardProps = {
   title: string
   description: string
@@ -39,20 +57,23 @@ const Card = ({ title, description, i, scrollYProgress }: CardProps) => {
     "var(--chakra-colors-purple-100)",
     "var(--chakra-colors-purple-50)",
   ]) */
+  const variants = useBreakpointValue({ base: baseVariant, md: mdVariant })
   return (
     <Center
       as={motion.div}
-      w="100vw"
+      w="full"
       h="100vh"
-      py="12"
-      px="16"
+      py="16"
       zIndex={i}
       // @ts-ignore mixed type
       style={{ scale, transformOrigin: "top center" }}
       // @ts-ignore mixed type
       sx={{ position: "-webkit-sticky", /* Safari */ position: "sticky", top: "0" }}
     >
-      <HStack
+      <Flex
+        align="center"
+        direction={["column-reverse", null, "row"]}
+        justify="center"
         as={motion.div}
         w="full"
         h="full"
@@ -64,11 +85,10 @@ const Card = ({ title, description, i, scrollYProgress }: CardProps) => {
         }}
         bg="purple.100"
         borderRadius="80"
-        justify="center"
         shadow="md"
       >
-        <VStack flex={1} align="center">
-          <Box>
+        <VStack flex={[0, null, 1]} align="center">
+          <Box mt={[6, null, 0]}>
             {/* <motion.p>{scrollYProgress}</motion.p> */}
             <Text
               className={fonts.heptaSlab.className}
@@ -83,10 +103,10 @@ const Card = ({ title, description, i, scrollYProgress }: CardProps) => {
             </Text>
           </Box>
         </VStack>
-        <Center flex={1}>
+        <Center flex={[0, null, 1]}>
           <Frame h={["200px", "400px", "500px"]} w={["120px", "200px", "350px"]}></Frame>
         </Center>
-      </HStack>
+      </Flex>
     </Center>
   )
 }
@@ -95,7 +115,15 @@ const FullCards = () => {
   const cardsRef = useRef(null)
   const { scrollYProgress } = useScroll({ target: cardsRef, offset: ["start end", "end"] })
   return (
-    <VStack as={motion.div} ref={cardsRef} position="relative" mx="-4">
+    <VStack
+      as={motion.div}
+      ref={cardsRef}
+      position="relative"
+      mx="-4"
+      w="full"
+      py={[4, null, 6, 8, 10, 12]}
+      px={pagePaddingW}
+    >
       {cards.map((card, i) => (
         <Card {...card} i={i} key={`card-${i}`} scrollYProgress={scrollYProgress} />
       ))}

@@ -10,8 +10,16 @@ const CMarquee = chakra(Marquee)
 
 export const RibbonItem = ({ text }: { text: String }) => {
   return (
-    <Center flex={1} whiteSpace="nowrap" px="6" py="3" bg="purple.100" mr="2" borderRadius="full">
-      <Text fontSize="2xl" className={fonts.ptSans.className}>
+    <Center
+      flex={1}
+      whiteSpace="nowrap"
+      px={[4, null, 6]}
+      py={[1, null, 3]}
+      bg="purple.100"
+      mr="2"
+      borderRadius="full"
+    >
+      <Text fontSize={["lg", "2xl"]} className={fonts.ptSans.className}>
         {text}
       </Text>
     </Center>
@@ -22,14 +30,14 @@ const Ribbon = () => {
   const y = usePageParallax(-300)
   return (
     <HStack
-      w="94vw"
+      w="100vw"
       spacing="1"
       overflowX="hidden"
       as={motion.div}
       style={{
         y,
         // @ts-ignore
-        rotate: -3,
+        rotate: -4,
       }}
     >
       <CMarquee pauseOnHover gradientColor={[244, 247, 238]}>

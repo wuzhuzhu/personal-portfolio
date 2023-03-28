@@ -1,15 +1,16 @@
 import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react"
 import { menuTheme } from "./components/menu"
 
-export const pagePaddingW = [4, 8, 12, 16, "120px"]
+// [4, null, 8, 12, 16, "120px"]
+export const pagePaddingW = { base: 4, md: 8, lg: 12, xl: 16, "2xl": "120px" }
 
 // default breakpoints
 const breakpoints = {
-  sm: "30em", // 480px
-  md: "48em", // 768px
-  lg: "62em", // 992px
-  xl: "80em", // 1280px
-  "2xl": "96em", // 1536px
+  sm: "30em", // 480px mobile big screen
+  md: "48em", // 768px pad vertical
+  lg: "62em", // 992px pad horizontal
+  xl: "80em", // 1280px desktop
+  "2xl": "96em", // 1536px desktop big screen
 }
 
 const spacing = {

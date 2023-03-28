@@ -14,7 +14,7 @@ import MailMe from "@/components/home/mail-me"
 
 const Home: BlitzPage = () => {
   return (
-    <VStack w="full" spacing="100px">
+    <VStack w="full" spacing={{ base: "60px", md: "80px", lg: "100px" }}>
       <Hero />
       <Ribbon />
       <FullCards />

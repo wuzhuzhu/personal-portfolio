@@ -45,7 +45,7 @@ const Hero = () => {
 
   return (
     <Center
-      px={[4, 8, 20, "120px"]}
+      px={[4, null, 8, 20, "120px"]}
       // bg="green"
       w="full"
       maxW={[null, null, null, null, "80%"]}
@@ -55,13 +55,13 @@ const Hero = () => {
     >
       <HeroGallery />
       <VStack
-        mt={{ base: 20, md: 0 }}
+        mt={{ base: 20, lg: 0 }}
         as={motion.div}
         display="flex"
         flexDir="column"
         align="flex-start"
         flex={1}
-        spacing={8}
+        spacing={{ base: 4, md: 6, lg: 8 }}
         initial="hidden"
         animate="visible"
         variants={staggerParentVariants}
@@ -91,7 +91,7 @@ const Hero = () => {
         <Text
           as={motion.p}
           variants={staggerChildVariants}
-          fontSize={["md", null, "xl", null, "2xl"]}
+          fontSize={["lg", null, "xl", null, "2xl"]}
         >
           Leveraging AI and Web Innovations to Drive Success - Open to Full/Part-Time Positions
         </Text>
