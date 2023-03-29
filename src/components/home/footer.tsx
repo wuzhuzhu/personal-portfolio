@@ -24,14 +24,14 @@ import { BREAK_POINTS } from "@/utils/constants"
 export const ExternalLink = () => {
   return (
     <VStack spacing="4" align="flex-start">
-      <Text fontSize="xl">Category</Text>
-      <Link fontSize="xl" color="steelGray.500">
+      <Text fontSize={["lg", null, "xl"]}>Category</Text>
+      <Link fontSize={["md", null, "lg", "xl"]} color="steelGray.500">
         test
       </Link>
-      <Link fontSize="xl" color="steelGray.500">
+      <Link fontSize={["md", null, "lg", "xl"]} color="steelGray.500">
         test
       </Link>
-      <Link fontSize="xl" color="steelGray.500">
+      <Link fontSize={["md", null, "lg", "xl"]} color="steelGray.500">
         test
       </Link>
     </VStack>
