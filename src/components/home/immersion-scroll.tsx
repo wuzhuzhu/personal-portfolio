@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react"
 import React from "react"
 import Frame, { ShadowFrame } from "./frame"
-
+import styles from "../../styles/immersion-scroll.module.css"
 const careerCards = [
   {
     title: "Teamstats - Founder/CTO",
@@ -91,7 +91,7 @@ const CareerCard = ({ title, description }) => {
   return (
     <VStack
       minW="250px"
-      h="280px"
+      h="300px"
       bg="purple.50"
       borderRadius="10px"
       p="20px"
@@ -105,7 +105,12 @@ const CareerCard = ({ title, description }) => {
 
 const CareerCards = () => {
   return (
-    <HStack overflowX="scroll" overflowY="hidden" scrollSnapType="x mandatory">
+    <HStack
+      overflowX="scroll"
+      overflowY="hidden"
+      scrollSnapType="x mandatory"
+      className={styles.cards}
+    >
       {careerCards.map((card, i) => (
         <CareerCard key={`c-card-${i}`} {...card}></CareerCard>
       ))}

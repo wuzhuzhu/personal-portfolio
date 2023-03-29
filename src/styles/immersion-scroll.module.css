@@ -1,0 +1,13 @@
+.cards::-webkit-scrollbar {
+  /* width: 1px; */
+  height: 5px;
+  width: 300px;
+}
+
+.cards::-webkit-scrollbar-track {
+  background-color: var(--chakra-colors-cucumber-100);
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background-color: var(--chakra-colors-purple-200);
+}
