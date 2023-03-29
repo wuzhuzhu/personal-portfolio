@@ -8,10 +8,17 @@ import { pagePaddingW } from "@/core/theme"
 const MailMe = () => {
   return (
     <Box px={pagePaddingW}>
-      <HStack w="full" py={[4, 6, 10]} px="150px" borderRadius="full" bg="purple.100">
+      <HStack
+        w="full"
+        py={[4, 6, 10]}
+        px={[8, null, "100px", "150px"]}
+        borderRadius={[20, null, "full"]}
+        bg="purple.100"
+        position={["relative", null, "static"]}
+      >
         <VStack flex="1" align="flex-start" spacing="4">
           <H3>Any questions?</H3>
-          <Text fontSize="xl">
+          <Text fontSize={["md", null, "lg", "xl"]}>
             Potential partner or employer interested in exploring collaboration opportunities, I
             would be delighted to discuss how we can work together.
           </Text>
@@ -26,7 +33,15 @@ const MailMe = () => {
             </Button>
           </HStack>
         </VStack>
-        <Image src="/images/hero-bg.png" alt="mail me image"></Image>
+        <Image
+          src="/images/hero-bg.png"
+          alt="mail me image"
+          w={["40vw", null, "auto"]}
+          position={["absolute", null, "static"]}
+          right={[0, null, "auto"]}
+          bottom={[0, null, "auto"]}
+          opacity={[0.4, null, 1]}
+        ></Image>
       </HStack>
     </Box>
   )

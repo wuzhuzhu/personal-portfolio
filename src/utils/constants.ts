@@ -19,4 +19,24 @@ export const SKILLS = [
   "Vercel",
 ]
 
+export const BREAK_POINTS = {
+  base: {
+    name: 'Mobile(base)',
+  },
+  sm: {
+    name: 'Mobile(sm)',
+  },
+  md: {
+    name: 'Tablet(md)',
+  },
+  lg: {
+    name: 'Laptop(lg)',
+  },
+  xl: {
+    name: 'Desktop(xl)',
+  },
+  '2xl': {
+    name: 'Desktop(2xl)',
+  },
+}
 

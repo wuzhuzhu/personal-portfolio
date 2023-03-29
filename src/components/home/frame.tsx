@@ -44,7 +44,7 @@ type TinyFrameProps = Partial<FrameProps>
 export const TinyFrame = (props: TinyFrameProps) => {
   const { children, bg = "white", ...rest } = props
   return (
-    <Frame w="4rem" h="6rem" shadow="lg" bg={bg} {...rest}>
+    <Frame w={["3rem", null, "4rem"]} h={["4.5rem", null, "6rem"]} shadow="lg" bg={bg} {...rest}>
       {children}
     </Frame>
   )
