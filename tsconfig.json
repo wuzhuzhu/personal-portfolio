@@ -20,6 +20,7 @@
     "tsBuildInfoFile": ".tsbuildinfo",
     "paths": {
       "@/*": ["src/*"],
+      "~/*": ["public/*"],
       "@/components/": ["src/components/"],
       "@/api/": ["src/pages/api/"],
       "@/pages/": ["src/pages/"],

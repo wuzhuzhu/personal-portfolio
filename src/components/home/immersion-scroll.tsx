@@ -15,6 +15,9 @@ import {
 import React from "react"
 import Frame, { ShadowFrame } from "./frame"
 import styles from "../../styles/immersion-scroll.module.css"
+import mePic from "~/images/frames/me.png"
+import { CImage } from "../shared/chakra-wrapped"
+
 const careerCards = [
   {
     title: "Teamstats - Founder/CTO",
@@ -63,13 +66,19 @@ const ImmersionScroll = () => {
       >
         <Box>
           <Frame
-            display="inline-block"
-            w={["320px", null, "400px"]}
-            h={["280px", null, "480px"]}
+            w={["260px", null, "400px"]}
+            h={["290px", null, "480px"]}
             flex={[0, 0, 1]}
             mr={[0, 0, 5, 10]}
             mb={[5, null, 0]}
-          ></Frame>
+          >
+            <CImage
+              w="85%"
+              h="85%"
+              src={mePic}
+              alt="A portrait handsome guy with glasses, background with concept of AI, coin, web, Monochromatic, Watercolor Painting, pencil, Children’s Drawing, Outlined, style of Ushio Shinohara"
+            ></CImage>
+          </Frame>
         </Box>
         <Box>
           <Text fontSize="lg" textAlign="left">
@@ -111,7 +120,7 @@ const CareerCards = () => {
       scrollSnapType="x mandatory"
       className={styles.cards}
     >
-      {careerCards.map((card, i) => (
+      {careerCards.reverse().map((card, i) => (
         <CareerCard key={`c-card-${i}`} {...card}></CareerCard>
       ))}
     </HStack>

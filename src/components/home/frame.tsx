@@ -1,7 +1,8 @@
 import { usePageParallax, useParallax } from "@/utils/hooks"
-import { Box, BoxProps, Center, CenterProps } from "@chakra-ui/react"
+import { Box, BoxProps, Center, CenterProps, Flex } from "@chakra-ui/react"
 import { motion, MotionValue, useScroll } from "framer-motion"
-import { memo } from "react"
+import mePic from "~/images/frames/me.png"
+import { CImage } from "../shared/chakra-wrapped"
 
 type FrameProps = CenterProps & {
   parallaxDistance?: number
@@ -24,18 +25,22 @@ const Frame = ({
   ...rest
 }: FrameProps) => {
   return (
-    <Center
+    <Flex
       as={motion.div}
+      display="inline-flex"
       transform={`translateY(${y}px)`}
       bg={bg}
       boxShadow={shadow}
       borderRadius="full"
+      overflow="hidden"
       {...rest}
       // @ts-ignore
       style={{ y }}
+      justify="center"
+      align="center"
     >
-      {children}
-    </Center>
+      <Center>{children}</Center>
+    </Flex>
   )
 }
 
