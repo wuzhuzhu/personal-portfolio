@@ -15,7 +15,7 @@ import {
 import React from "react"
 import Frame, { ShadowFrame } from "./frame"
 import styles from "../../styles/immersion-scroll.module.css"
-import mePic from "~/images/frames/me.webp"
+import mePic from "~/images/frames/me.png"
 import wavingPic from "~/images/waving.png"
 // import { CImage } from "../shared/chakra-wrapped"
 import Image from "next/image"
@@ -76,8 +76,8 @@ const ImmersionScroll = () => {
           >
             <Image
               style={{
-                width: "220px",
-                height: "280px",
+                width: "85%",
+                height: "85%",
               }}
               src={mePic}
               alt="A portrait handsome guy with glasses, background with concept of AI, coin, web, Monochromatic, Watercolor Painting, pencil, Children’s Drawing, Outlined, style of Ushio Shinohara"
