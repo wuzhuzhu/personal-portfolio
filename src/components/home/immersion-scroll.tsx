@@ -7,7 +7,7 @@ import {
   Text,
   Container,
   HStack,
-  Image,
+  // Image,
   Box,
   Center,
   Flex,
@@ -16,7 +16,9 @@ import React from "react"
 import Frame, { ShadowFrame } from "./frame"
 import styles from "../../styles/immersion-scroll.module.css"
 import mePic from "~/images/frames/me.png"
-import { CImage } from "../shared/chakra-wrapped"
+import wavingPic from "~/images/waving.png"
+// import { CImage } from "../shared/chakra-wrapped"
+import Image from "next/image"
 
 const careerCards = [
   {
@@ -52,7 +54,7 @@ const ImmersionScroll = () => {
       <H1>Passionate</H1>
       <HStack spacing="4" mt={[8, null, 12, 16]}>
         <ShadowFrame>
-          <Image src="/images/waving.png" alt="waving"></Image>
+          <Image src={wavingPic} alt="waving"></Image>
         </ShadowFrame>
         <H1>Tech Expert</H1>
       </HStack>
@@ -72,12 +74,14 @@ const ImmersionScroll = () => {
             mr={[0, 0, 5, 10]}
             mb={[5, null, 0]}
           >
-            <CImage
-              w="85%"
-              h="85%"
+            <Image
+              style={{
+                width: "85%",
+                height: "85%",
+              }}
               src={mePic}
               alt="A portrait handsome guy with glasses, background with concept of AI, coin, web, Monochromatic, Watercolor Painting, pencil, Children’s Drawing, Outlined, style of Ushio Shinohara"
-            ></CImage>
+            ></Image>
           </Frame>
         </Box>
         <Box>

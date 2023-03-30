@@ -24,11 +24,11 @@ const MailMe = () => {
           </Text>
           <HStack spacing="4" mt="8">
             <Link href="mailto:'buaaer@gmail.com'" target="_blank">
-              <Button leftIcon={<TbMail />} color="cucumber.500" variant="outline">
+              <Button leftIcon={<TbMail />} colorScheme="cucumber" variant="outline">
                 Email
               </Button>
             </Link>
-            <Button leftIcon={<TbBrandWechat />} color="cucumber.500" variant="outline">
+            <Button leftIcon={<TbBrandWechat />} colorScheme="cucumber" variant="outline">
               229220329
             </Button>
           </HStack>
