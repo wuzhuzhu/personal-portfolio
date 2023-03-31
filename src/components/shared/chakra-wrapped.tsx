@@ -7,13 +7,15 @@ export const CImage = ({
   src,
   alt,
   fit = "cover",
+  w, // not support full yet
+  h, // not support full yet
   ...rest
 }: { src: StaticImageData; alt: string; fit?: "cover" | "contain" | "none" } & Omit<
   BoxProps,
   "as"
 >) => {
   return (
-    <Box position="relative" {...rest}>
+    <Box display="inline" w={w} h={h} position="relative" {...rest}>
       <Image
         fill
         // sizes="(max-width: 768px) 100px,
