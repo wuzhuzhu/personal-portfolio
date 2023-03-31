@@ -5,12 +5,7 @@ import { type } from "os"
 import { memo } from "react"
 import { CImage } from "../shared/chakra-wrapped"
 import Frame from "./frame"
-import Image from "next/image"
-import hero1 from "~/images/frames/hero1.png"
-import { CImage } from "../shared/chakra-wrapped"
 import hero1Pic from "~/images/frames/hero1.png"
-import mePic from "~/images/frames/me.png"
-import Image from "next/image"
 
 const HeroGallery = () => {
   const y1 = usePageParallax(-400)
