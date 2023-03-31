@@ -15,6 +15,7 @@ import { H3 } from "@/core/components/typography"
 import { pagePaddingW } from "@/core/theme"
 
 const MBox = motion(Box)
+
 const HeroBtn = ({ icon, text }) => {
   return (
     <Button

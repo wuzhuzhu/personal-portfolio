@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react"
 import { motion, MotionValue, useInView, useScroll, useSpring, useTransform } from "framer-motion"
 import React, { useRef } from "react"
+import visionImg from "~/images/frames/vision.png"
 
 import Frame from "./frame"
 
@@ -21,16 +22,19 @@ const cards = [
     title: "Management Maestro",
     description:
       "A decade of experience leading and expanding tech teams at renowned companies. Expertise in managing high-traffic projects with millions of daily users.",
+    imgSrc: visionImg,
   },
   {
     title: "AI, Web3 & Fullstack Visionary",
     description:
       "Proficient in AI tools, Web3, Solidity, AWS, and GraphQL/Prisma. Delivering seamless, high-performance web applications with cutting-edge technologies.",
+    imgSrc: visionImg,
   },
   {
     title: "Frontend Virtuoso & Design Connoisseur",
     description:
       "Expert in frontend technologies, crafting engaging user experiences. Mastering cross-platform engineering, React-native reanimated2, and framer motion for visually stunning interfaces.",
+    imgSrc: visionImg,
   },
 ]
 
@@ -99,7 +103,7 @@ const Card = ({ title, description, i, scrollYProgress }: CardProps) => {
         shadow="md"
         overflow="hidden"
       >
-        <VStack flex={[0, null, 1]} align="center" px={[4, null, 4, 0]}>
+        <VStack flex={[0, null, 1]} align="center" px={[4, null, 4, 6]}>
           <Container mt={[6, null, 0]}>
             {/* <motion.p>{scrollYProgress}</motion.p> */}
             <H5

@@ -6,6 +6,7 @@ import { memo } from "react"
 import { CImage } from "../shared/chakra-wrapped"
 import Frame from "./frame"
 import hero1Pic from "~/images/frames/hero1.png"
+import hero2Pic from "~/images/frames/hero2.png"
 
 const HeroGallery = () => {
   const y1 = usePageParallax(-400)
@@ -31,10 +32,17 @@ const HeroGallery = () => {
       <motion.div style={{ y: y2 }}>
         <Frame
           y={60}
-          shadow="3xl"
+          shadow="2xl"
           w={{ base: "150px", lg: "200px" }}
           h={{ base: "240px", lg: "320px" }}
-        ></Frame>
+        >
+          <CImage
+            w={{ base: "150px", lg: "200px" }}
+            h={{ base: "240px", lg: "320px" }}
+            alt="A portrait handsome guy with glasses, background with concept of AI, coin, web, Monochromatic, Watercolor Painting, pencil, Children’s Drawing, Outlined, style of Ushio Shinohara"
+            src={hero2Pic}
+          ></CImage>
+        </Frame>
       </motion.div>
     </HStack>
   )
