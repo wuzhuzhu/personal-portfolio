@@ -87,7 +87,7 @@ const Hero = () => {
         {/* A parallax indicator */}
         {/* <MBox bg="red" h="8" w="8" position="fixed" top="0" style={{ y }}></MBox> */}
         <H3 as={motion.p} variants={staggerChildVariants}>
-          Empowering Frontend Teams, Scaling Success
+          Empowering Frontend Teams, Scaling Success.
         </H3>
         <Text
           as={motion.p}
