@@ -22,19 +22,9 @@ import Image from "next/image"
 
 const careerCards = [
   {
-    title: "Teamstats - Founder/CTO",
+    title: "Alibaba - Software Engineering Manager",
     description:
-      "Founded Teamstats, providing event services for non-official sports events. Developed on-site scoring systems, user-end interfaces, and live streaming capabilities.",
-  },
-  {
-    title: "MI.com/ihealth - Fullstack Developer",
-    description:
-      "Key developer of intelligent medical hardware projects, leading technology transformation and exploration in health tech.",
-  },
-  {
-    title: "8win - Frontend Director",
-    description:
-      "Led front-end architecture for 8win Sports Betting. Collaborated with JD, designed the main framework, and built an SSR framework based on Next.js.",
+      "Led a 20-member front-end team, expanding it by 40% in one year. Developed cross-platform solutions for Eleme Native App, mini-apps, and web. Core player in Alibaba Basketball Team.",
   },
   {
     title: "Meituan - Software Engineering Manager",
@@ -42,9 +32,19 @@ const careerCards = [
       "Developed 10+ internal cloud web apps, founded Meituan GraphQL club, and contributed to the Meituan Design system. Member of the Meituan Group Promotion Committee.",
   },
   {
-    title: "Alibaba - Software Engineering Manager",
+    title: "8win - Frontend Director",
     description:
-      "Led a 20-member front-end team, expanding it by 40% in one year. Developed cross-platform solutions for Eleme Native App, mini-apps, and web. Core player in Alibaba Basketball Team.",
+      "Led front-end architecture for 8win Sports Betting. Collaborated with JD, designed the main framework, and built an SSR framework based on Next.js.",
+  },
+  {
+    title: "MI.com/ihealth - Fullstack Developer",
+    description:
+      "Key developer of intelligent medical hardware projects, leading technology transformation and exploration in health tech.",
+  },
+  {
+    title: "Teamstats - Founder/CTO",
+    description:
+      "Founded Teamstats, providing event services for non-official sports events. Developed on-site scoring systems, user-end interfaces, and live streaming capabilities.",
   },
 ]
 
@@ -124,7 +124,7 @@ const CareerCards = () => {
       scrollSnapType="x mandatory"
       className={styles.cards}
     >
-      {careerCards.reverse().map((card, i) => (
+      {careerCards.map((card, i) => (
         <CareerCard key={`c-card-${i}`} {...card}></CareerCard>
       ))}
     </HStack>
