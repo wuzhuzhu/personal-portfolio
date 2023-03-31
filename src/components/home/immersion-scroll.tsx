@@ -19,6 +19,7 @@ import mePic from "~/images/frames/me.png"
 import wavingPic from "~/images/waving.png"
 // import { CImage } from "../shared/chakra-wrapped"
 import Image from "next/image"
+import { CImage } from "../shared/chakra-wrapped"
 
 const careerCards = [
   {
@@ -74,14 +75,12 @@ const ImmersionScroll = () => {
             mr={[0, 0, 5, 10]}
             mb={[5, null, 0]}
           >
-            <Image
-              style={{
-                width: "85%",
-                height: "85%",
-              }}
-              src={mePic}
+            <CImage
+              w={["220px", null, "340px"]}
+              h={["280px", null, "440px"]}
               alt="A portrait handsome guy with glasses, background with concept of AI, coin, web, Monochromatic, Watercolor Painting, pencil, Children’s Drawing, Outlined, style of Ushio Shinohara"
-            ></Image>
+              src={mePic}
+            ></CImage>
           </Frame>
         </Box>
         <Box>
