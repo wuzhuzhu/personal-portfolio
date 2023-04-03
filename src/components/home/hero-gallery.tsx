@@ -39,7 +39,7 @@ const HeroGallery = () => {
           <CImage
             w={{ base: "150px", lg: "200px" }}
             h={{ base: "240px", lg: "320px" }}
-            alt="A portrait handsome guy with glasses, background with concept of AI, coin, web, Monochromatic, Watercolor Painting, pencil, Children’s Drawing, Outlined, style of Ushio Shinohara"
+            alt="Todo"
             src={hero2Pic}
           ></CImage>
         </Frame>
