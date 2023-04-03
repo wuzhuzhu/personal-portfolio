@@ -22,6 +22,7 @@ import { headerButtonVariants, scrollHeaderVariants } from "@/utils/framer-varia
 import { Suspense, useEffect, useState } from "react"
 import { useHeaderHidden } from "@/utils/hooks"
 import fonts from "@/utils/fonts"
+import Link from "next/link"
 
 import HeaderItemLoading from "@/components/loading/header-item-loading"
 import UserInfo from "../user-info"
@@ -70,9 +71,11 @@ export const MenuBtns = ({}) => {
       <Button variant="ghost" colorScheme="steelGray" color="steelGray.800" mr="8">
         Blog
       </Button>
-      <Button variant="ghost" colorScheme="steelGray" color="steelGray.800" mr="8">
-        Contact
-      </Button>
+      <Link href="#contact">
+        <Button variant="ghost" colorScheme="steelGray" color="steelGray.800" mr="8">
+          Contact
+        </Button>
+      </Link>
       {variants?.showLogin && (
         <Suspense fallback={<HeaderItemLoading />}>
           <UserInfo />
