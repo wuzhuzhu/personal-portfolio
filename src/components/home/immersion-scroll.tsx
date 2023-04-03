@@ -20,8 +20,9 @@ import wavingPic from "~/images/waving.png"
 // import { CImage } from "../shared/chakra-wrapped"
 import Image from "next/image"
 import { CImage } from "../shared/chakra-wrapped"
-import { motion } from "framer-motion"
+import { motion, useScroll } from "framer-motion"
 import { floatAppearVariants, showUpVariants } from "@/utils/framer-variants"
+import { usePageParallax, useParallax } from "@/utils/hooks"
 
 const careerCards = [
   {
@@ -52,8 +53,11 @@ const careerCards = [
 ]
 
 const ImmersionScroll = () => {
+  const immerRef = React.useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({ target: immerRef, offset: ["0.5 1", "1 0"] })
+  const y = useParallax(scrollYProgress, -200)
   return (
-    <Box px={pagePaddingW} w="full">
+    <Box px={pagePaddingW} w="full" ref={immerRef}>
       <H1>Passionate</H1>
       <HStack spacing="4" mt={[8, null, 12, 16]}>
         <ShadowFrame>
@@ -74,6 +78,7 @@ const ImmersionScroll = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={showUpVariants}
+          style={{ y }}
         >
           <Frame
             w={["260px", null, "400px"]}
@@ -81,6 +86,7 @@ const ImmersionScroll = () => {
             flex={[0, 0, 1]}
             mr={[0, 0, 5, 10]}
             mb={[5, null, 0]}
+            shadow="xl"
           >
             <CImage
               w={["220px", null, "340px"]}
