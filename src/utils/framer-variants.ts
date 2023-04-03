@@ -21,7 +21,7 @@ export const staggerParentVariants = {
   },
   visible: {
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.3
     },
   },
 }
@@ -48,9 +48,29 @@ export const showUpVariants = {
     opacity: 1,
     transition: {
       duration: 0.3,
-      delay: 0.6,
+      // delay: 0.6,
       ease: "easeOut",
     },
+  }
+}
+
+
+export const floatAppearVariants = ({ x = 0, y = 50 }) => {
+  return {
+    hidden: {
+      x,
+      y,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      }
+    }
   }
 }
 

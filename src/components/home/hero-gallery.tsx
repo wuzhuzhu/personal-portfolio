@@ -7,13 +7,26 @@ import { CImage } from "../shared/chakra-wrapped"
 import Frame from "./frame"
 import hero1Pic from "~/images/frames/hero1.png"
 import hero2Pic from "~/images/frames/hero2.png"
+import {
+  showUpVariants,
+  staggerChildVariants,
+  staggerParentVariants,
+} from "@/utils/framer-variants"
 
 const HeroGallery = () => {
   const y1 = usePageParallax(-400)
   const y2 = usePageParallax(-800)
   return (
-    <HStack spacing="-4" flex={1} justify="center">
-      <motion.div style={{ y: y1 }}>
+    <HStack
+      spacing="-4"
+      flex={1}
+      justify="center"
+      as={motion.div}
+      initial="hidden"
+      animate="visible"
+      variants={staggerParentVariants}
+    >
+      <motion.div style={{ y: y1 }} variants={showUpVariants}>
         <Frame
           y={-20}
           shadow="xl"
@@ -29,7 +42,7 @@ const HeroGallery = () => {
         </Frame>
       </motion.div>
 
-      <motion.div style={{ y: y2 }}>
+      <motion.div style={{ y: y2 }} variants={showUpVariants}>
         <Frame
           y={60}
           shadow="2xl"

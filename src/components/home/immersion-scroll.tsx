@@ -20,6 +20,8 @@ import wavingPic from "~/images/waving.png"
 // import { CImage } from "../shared/chakra-wrapped"
 import Image from "next/image"
 import { CImage } from "../shared/chakra-wrapped"
+import { motion } from "framer-motion"
+import { floatAppearVariants, showUpVariants } from "@/utils/framer-variants"
 
 const careerCards = [
   {
@@ -67,7 +69,12 @@ const ImmersionScroll = () => {
         textAlign="center"
         mt={[8, null, 12, 16]}
       >
-        <Box>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={showUpVariants}
+        >
           <Frame
             w={["260px", null, "400px"]}
             h={["290px", null, "480px"]}
@@ -82,9 +89,17 @@ const ImmersionScroll = () => {
               src={mePic}
             ></CImage>
           </Frame>
-        </Box>
+        </motion.div>
         <Box>
-          <Text fontSize="lg" textAlign="left">
+          <Text
+            as={motion.p}
+            fontSize="lg"
+            textAlign="left"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={floatAppearVariants({})}
+          >
             A talented professional with exceptional skills in team management, full-stack
             development, and frontend design. By embracing innovation and driving technological
             advancements, this individual has made significant contributions to leading companies in
