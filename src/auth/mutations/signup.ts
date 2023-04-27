@@ -3,11 +3,12 @@ import { resolver } from "@blitzjs/rpc"
 import db from "db"
 import { Signup } from "../validations"
 
-export default resolver.pipe(resolver.zod(Signup), async ({ email, password }, ctx) => {
+export default resolver.pipe(resolver.zod(Signup), async ({ email, password, name }, ctx) => {
   const hashedPassword = await SecurePassword.hash(password.trim())
+  console.log('in comming user', { email, password, name })
   const user = await db.user.create({
     data: {
-      email: email.toLowerCase().trim(), hashedPassword, role: "USER", memberships: {
+      email: email.toLowerCase().trim(), hashedPassword, role: "USER", name, memberships: {
         create: {
           role: 'USER',
           organization: {

@@ -7,5 +7,6 @@
   "jest.autoRun": "off",
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.words": ["signup"]
 }

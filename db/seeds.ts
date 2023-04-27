@@ -1,4 +1,4 @@
-// import db from "./index"
+import db from "./index"
 
 /*
  * This seed function is executed when you run `blitz db seed`.
@@ -10,6 +10,11 @@ const seed = async () => {
   // for (let i = 0; i < 5; i++) {
   //   await db.project.create({ data: { name: "Project " + i } })
   // }
+  await db.organization.create({
+    data: {
+      name: 'main'
+    }
+  })
 }
 
 export default seed

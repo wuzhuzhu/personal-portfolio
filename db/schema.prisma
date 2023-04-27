@@ -47,7 +47,7 @@ model User {
   id             String     @id @default(uuid())
   createdAt      DateTime   @default(now())
   updatedAt      DateTime   @updatedAt
-  name           String?
+  name           String
   email          String     @unique
   hashedPassword String?
   role           GlobalRole @default(USER)
