@@ -7,7 +7,7 @@ import { pagePaddingW } from "@/core/theme"
 
 const MailMe = () => {
   return (
-    <Box px={pagePaddingW}>
+    <Box px={pagePaddingW} id="contact">
       <HStack
         w="full"
         py={[4, 6, 10]}

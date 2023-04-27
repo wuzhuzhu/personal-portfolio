@@ -5,11 +5,18 @@ import {
   Text,
   Center,
   Container,
-  Image,
+  Icon,
   HStack,
   Tag,
   useBreakpointValue,
 } from "@chakra-ui/react"
+import {
+  FcDataConfiguration,
+  FcGraduationCap,
+  FcLineChart,
+  FcMultipleDevices,
+  FcReading,
+} from "react-icons/fc"
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
 import React from "react"
 import Frame, { TinyFrame } from "./frame"
@@ -55,19 +62,29 @@ const Education = () => {
         <Center bg="purple.100" borderRadius="80" width="100%" height="600px" position="relative">
           {/* floating tiny frames */}
           <motion.div style={{ position: "absolute", top: "40%", left: "12%", translateY: y3 }}>
-            <TinyFrame></TinyFrame>
+            <TinyFrame>
+              <Icon boxSize={["2.5rem", null, "3.5rem"]} as={FcDataConfiguration}></Icon>
+            </TinyFrame>
           </motion.div>
           <motion.div style={{ position: "absolute", top: "55%", left: "75%", translateY: y4 }}>
-            <TinyFrame></TinyFrame>
+            <TinyFrame>
+              <Icon boxSize={["2.5rem", null, "3.5rem"]} as={FcGraduationCap}></Icon>
+            </TinyFrame>
           </motion.div>
           <motion.div style={{ position: "absolute", top: "120%", left: "20%", translateY: y5 }}>
-            <TinyFrame></TinyFrame>
+            <TinyFrame>
+              <Icon boxSize={["2.5rem", null, "3.5rem"]} as={FcLineChart}></Icon>
+            </TinyFrame>
           </motion.div>
           <motion.div style={{ position: "absolute", top: "90%", left: "60%", translateY: y2 }}>
-            <TinyFrame></TinyFrame>
+            <TinyFrame>
+              <Icon boxSize={["2.5rem", null, "3.5rem"]} as={FcMultipleDevices}></Icon>
+            </TinyFrame>
           </motion.div>
           <motion.div style={{ position: "absolute", bottom: "-50%", left: "90%", translateY: y5 }}>
-            <TinyFrame></TinyFrame>
+            <TinyFrame>
+              <Icon boxSize={["2.5rem", null, "3.5rem"]} as={FcReading}></Icon>
+            </TinyFrame>
           </motion.div>
         </Center>
       </VStack>

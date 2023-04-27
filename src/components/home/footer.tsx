@@ -20,6 +20,7 @@ import React from "react"
 import { Logo } from "../layout/header"
 import { pagePaddingW } from "@/core/theme"
 import { BREAK_POINTS } from "@/utils/constants"
+import { useRouter } from "next/router"
 
 export const ExternalLink = () => {
   return (
@@ -65,7 +66,7 @@ const Footer = () => {
                   Responsive: {variants?.name}
                 </Text>
               </VStack>
-              <Wrap mt={[0, null, 6]} ml={[4, null, 0]}>
+              <HStack mt={[0, null, 6]} ml={[4, null, 0]} justify="center">
                 <IconButton
                   bgColor="transparent"
                   color="steelGray.700"
@@ -73,6 +74,7 @@ const Footer = () => {
                   aria-label="Call Segun"
                   size="lg"
                   icon={<FaLinkedinIn />}
+                  onClick={() => window.open("https://www.linkedin.com/in/walterfe/", "_blank")}
                 />
                 <IconButton
                   mt="4"
@@ -82,8 +84,9 @@ const Footer = () => {
                   aria-label="Call Segun"
                   size="lg"
                   icon={<FaGithub />}
+                  onClick={() => window.open("https://github.com/wuzhuzhu", "_blank")}
                 />
-              </Wrap>
+              </HStack>
             </Flex>
 
             <HStack
