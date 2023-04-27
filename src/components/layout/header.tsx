@@ -47,14 +47,16 @@ const mdVariant = {
 
 export const Logo = () => {
   return (
-    <Flex direction="row" mr="4">
-      <Image
-        src="/images/logo.svg"
-        alt="logo"
-        w={{ base: "28", sm: "32", md: "40" }}
-        ml={{ base: "-5", md: "-7" }}
-      />
-    </Flex>
+    <Link href="/">
+      <Flex direction="row" mr="4">
+        <Image
+          src="/images/logo.svg"
+          alt="logo"
+          w={{ base: "28", sm: "32", md: "40" }}
+          ml={{ base: "-5", md: "-7" }}
+        />
+      </Flex>
+    </Link>
   )
 }
 

@@ -17,7 +17,6 @@ import { ChevronDownIcon } from "@chakra-ui/icons"
 
 const UserInfo = () => {
   const currentUser = useCurrentUser()
-  debugger
   const [logoutMutation] = useMutation(logout)
 
   if (currentUser) {
