@@ -24,22 +24,22 @@ export default resolver.pipe(resolver.zod(Signup), async ({ email, password, nam
         select: {
           role: true,
           organization: {
-            select: {
+            select: {+
               name: true
             }
-          },
-          organizationId: true
-        }
-      },
-      tokens: false,
-      sessions: false,
+        },
+        organizationId: true
+      }
     },
+    tokens: false,
+    sessions: false,
+  },
   })
 
-  await ctx.session.$create({
-    userId: user.id,
-    roles: [user.role, (user.memberships && user.memberships[0]) ? user.memberships[0].role : 'VISITOR'],
-    orgId: user.memberships && user.memberships[0]?.organizationId
-  })
-  return user
+await ctx.session.$create({
+  userId: user.id,
+  roles: [user.role, (user.memberships && user.memberships[0]) ? user.memberships[0].role : 'VISITOR'],
+  orgId: user.memberships && user.memberships[0]?.organizationId
+})
+return user
 })
