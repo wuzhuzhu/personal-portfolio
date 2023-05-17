@@ -2,6 +2,7 @@ import { ErrorFallbackProps, ErrorComponent, ErrorBoundary, AppProps } from "@bl
 import { AuthenticationError, AuthorizationError } from "blitz"
 import React, { Suspense } from "react"
 import { withBlitz } from "@/blitz-client"
+import { Analytics } from "@vercel/analytics/react"
 import "@/styles/globals.css"
 
 import { ChakraProvider } from "@chakra-ui/react"
@@ -34,6 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ErrorBoundary FallbackComponent={RootErrorFallback}>
         {getLayout(<Component {...pageProps} />)}
       </ErrorBoundary>
+      <Analytics />
     </ChakraProvider>
   )
 }

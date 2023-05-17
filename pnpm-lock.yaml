@@ -19,6 +19,7 @@ specifiers:
   '@types/preview-email': 2.0.1
   '@types/react': 18.0.25
   '@typescript-eslint/eslint-plugin': 5.42.1
+  '@vercel/analytics': 1.0.1
   '@vitejs/plugin-react': 2.2.0
   blitz: 2.0.0-beta.23
   eslint: 8.27.0
@@ -56,6 +57,7 @@ dependencies:
   '@emotion/styled': 11.10.6_36w5hsinjku373i4fj56ptnobm
   '@next/font': 13.1.6
   '@prisma/client': 4.11.0_prisma@4.11.0
+  '@vercel/analytics': 1.0.1
   blitz: 2.0.0-beta.23_t2onre2iphfojnae77env6h7am
   final-form: 4.20.9
   framer-motion: 9.1.7_biqbaboplfbrettd7655fr4n2y
@@ -3858,6 +3860,10 @@ packages:
       '@typescript-eslint/types': 5.53.0
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@vercel/analytics/1.0.1:
+    resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
+    dev: false
 
   /@vitejs/plugin-react/2.2.0:
     resolution: {integrity: sha512-FFpefhvExd1toVRlokZgxgy2JtnBOdp4ZDsq7ldCWaqGSGn9UhWMAVm/1lxPL14JfNS5yGz+s9yFrQY6shoStA==}
