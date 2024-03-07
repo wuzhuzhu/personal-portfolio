@@ -19,7 +19,7 @@ const Home: BlitzPage = () => {
 			<Script
 				async
 				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7213311370099570"
-				crossorigin="anonymous"
+				crossOrigin="anonymous"
 			/>
 			<Hero />
 			<Ribbon />
